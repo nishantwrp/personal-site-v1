@@ -1,29 +1,14 @@
-# nishantwrp-website
+# Source Code
 
-## Project setup
-```
-npm install
-```
+## About
+This is a responsive website designed with the help of VueJS Frontend Framework along with Vuetify UI Framwork as a Material Design UI for the Website.Axios is also used to fetch the current max rating using CodeForces API.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Technical Stack
+- VueJS Frontend Framework
+- Vuetify Frontend UI 
+- Axios For API Consumption
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Acknowledgements
+- Font Awesome
+- Netlify
+- Stylus
