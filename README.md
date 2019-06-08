@@ -1,29 +1,8 @@
-# nishantwrp-website
+# This Is The Source Code For My Website
 
-## Project setup
-```
-npm install
-```
+## About
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Technical Stack
+- VueJS Frontend Framework
+- Vuetify Frontend UI 
+- Axios For API Consuption
