@@ -61,7 +61,7 @@
       ></v-toolbar-side-icon>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" temporary fixed>
       <v-list class="pt-0" dense>
         <v-list-tile v-for="item in items" :key="item.title">
           <router-link :to="item.link">
