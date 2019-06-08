@@ -6,4 +6,4 @@ This is a responsive website designed with the help of VueJS Frontend Framework 
 ### Technical Stack
 - VueJS Frontend Framework
 - Vuetify Frontend UI 
-- Axios For API Consuption
+- Axios For API Consumption
