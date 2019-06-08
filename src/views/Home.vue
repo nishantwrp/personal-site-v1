@@ -26,7 +26,7 @@
           xs12
           style="font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;padding:5px;"
         >
-          <p>Hello, I'm Nishant Mittal, Junior Undergraduate in Computer Science And Engineering at IIT(BHU) Varanasi, from Sangrur,Punjab. I have cleared the JEE Mains and Advanced Exams with national ranks ~900 each.</p>
+          <p>Hello, I'm Nishant Mittal, studying Computer Science And Engineering at IIT(BHU) Varanasi, from Sangrur,Punjab. I have cleared the JEE Mains and Advanced Exams with national ranks ~900 each.</p>
           <p>I am really passionate about Competitve Programming and Web Development. I am currently exploring the field of Machine Learning. I love to learn about new techonologies related to the field of Computer Science. I have worked with techonologies like Django, VueJS, Sci-kit Learn, Git.</p>
         </v-flex>
       </v-layout>
