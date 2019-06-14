@@ -1,6 +1,12 @@
 <template>
   <div>
-    <v-toolbar v-if="scrolled === false" color="white" flat fixed>
+    <v-toolbar
+      v-if="scrolled === false"
+      style="background-color: #fafafa !important;
+border-color: #fafafa !important;"
+      flat
+      fixed
+    >
       <v-toolbar-title>
         <router-link to="/">
           <Logo :logosize="25" :logocolor="'#3f51b5'"/>
