@@ -36,11 +36,45 @@
 
             <v-card-actions>
               <a href="https://github.com/nishantwrp/nishantwrp-website" target="_blank">
-                <v-btn flat color="secondary">View Repo</v-btn>
+                <v-btn flat color="secondary">Repo</v-btn>
               </a>
             </v-card-actions>
           </v-card>
         </v-flex>
+        <!-- Polls App -->
+        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+          <v-card>
+            <v-img
+              src="https://www.elucidat.com/wp-content/uploads/2016/06/social-polling-learning.png"
+              aspect-ratio="2.75"
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0" style="text-align:left">Polls App</h3>
+                <div>
+                  <ul style="text-align:left">
+                    <li>VueJS</li>
+                    <li>Vuetify UI</li>
+                    <li>Django Rest Framework</li>
+                    <li>Swagger Api (drf-yasg)</li>
+                  </ul>
+                </div>
+              </div>
+            </v-card-title>
+
+            <v-card-actions>
+              <a href="https://github.com/nishantwrp/polls" target="_blank">
+                <v-btn flat color="secondary">Repo</v-btn>
+              </a>
+               <a href="https://pollswrp.netlify.com/" target="_blank">
+                <v-btn flat color="secondary">App</v-btn>
+              </a>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+        <!-- Polls App -->
       </v-layout>
     </v-container>
   </v-container>
