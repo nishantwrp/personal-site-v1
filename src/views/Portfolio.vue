@@ -36,7 +36,7 @@
 
             <v-card-actions>
               <a href="https://github.com/nishantwrp/nishantwrp-website" target="_blank">
-                <v-btn flat color="secondary">Repo</v-btn>
+                <v-btn flat color="secondary">Repository</v-btn>
               </a>
             </v-card-actions>
           </v-card>
@@ -66,7 +66,7 @@
 
             <v-card-actions>
               <a href="https://github.com/nishantwrp/polls" target="_blank">
-                <v-btn flat color="secondary">Repo</v-btn>
+                <v-btn flat color="secondary">Repository</v-btn>
               </a>
                <a href="https://pollswrp.netlify.com/" target="_blank">
                 <v-btn flat color="secondary">App</v-btn>
@@ -75,6 +75,37 @@
           </v-card>
         </v-flex>
         <!-- Polls App -->
+        <!-- sublime-backup -->
+          <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+          <v-card>
+            <v-img
+              src="https://wpvivid.com/wp-content/uploads/2019/02/wpvivid-banner.png"
+              aspect-ratio="2.75"
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0" style="text-align:left">sublime-backup</h3>
+                <div>
+                  <ul style="text-align:left">
+                    <li>A simple command line tool to backup / sync your sublime snippets</li>
+                    <li>Click</li>
+                    <li>Django Rest Framework</li>
+                    <li>Swagger Api (drf-yasg)</li>
+                  </ul>
+                </div>
+              </div>
+            </v-card-title>
+
+            <v-card-actions>
+              <a href="https://github.com/nishantwrp/sublime-backup-cli" target="_blank">
+                <v-btn flat color="secondary">Repository</v-btn>
+              </a>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+        <!-- sublime-backup -->
       </v-layout>
     </v-container>
   </v-container>
