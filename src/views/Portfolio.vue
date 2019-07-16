@@ -102,6 +102,9 @@
               <a href="https://github.com/nishantwrp/sublime-backup-cli" target="_blank">
                 <v-btn flat color="secondary">Repository</v-btn>
               </a>
+               <a href="https://pypi.org/project/sublime-backup/" target="_blank">
+                <v-btn flat color="secondary">Pypi</v-btn>
+              </a>
             </v-card-actions>
           </v-card>
         </v-flex>
