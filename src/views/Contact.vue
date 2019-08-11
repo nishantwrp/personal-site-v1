@@ -49,7 +49,7 @@
                 </v-list-tile-action>
 
                 <v-list-tile-content>
-                  <v-list-tile-title>mittalnishant14@outlook.com</v-list-tile-title>
+                  <v-list-tile-title>admin@nishantwrp.com</v-list-tile-title>
                   <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
                 </v-list-tile-content>
               </v-list-tile>
