@@ -66,6 +66,8 @@ export default {
       })
       .catch(e => {
         console.log(e);
+        document.querySelector("#falseapp").classList.add("hideit");
+        document.querySelector("#mainapp").classList.remove("hideit");
       });
   },
   computed: {
