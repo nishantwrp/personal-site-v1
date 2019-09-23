@@ -74,7 +74,8 @@
                 <h3 class="headline mb-0" style="text-align:left">Web Development</h3>
                 <div>
                   <ul style="text-align:left">
-                    <li>Secured 3rd position in Microsoft Codefundo 2k18 in the institute</li>
+                    <li>Secured 1st position in Microsoft Codefundo++ 2k19 in the institute</li>
+                    <li>Secured 3rd position in Microsoft Codefundo++ 2k18 in the institute</li>
                   </ul>
                 </div>
               </div>

@@ -58,7 +58,7 @@
                     <li>VueJS</li>
                     <li>Vuetify UI</li>
                     <li>Django Rest Framework</li>
-                    <li>Swagger Api (drf-yasg)</li>
+                    <li>drf-yasg Swagger Generator</li>
                   </ul>
                 </div>
               </div>
@@ -92,7 +92,7 @@
                     <li>A simple command line tool to backup / sync your sublime snippets</li>
                     <li>Click</li>
                     <li>Django Rest Framework</li>
-                    <li>Swagger Api (drf-yasg)</li>
+                    <li>drf-yasg Swagger Generator</li>
                   </ul>
                 </div>
               </div>
@@ -111,6 +111,67 @@
         <!-- sublime-backup -->
       </v-layout>
     </v-container>
+      <v-layout row text-xs-center wrap>
+        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+          <v-card>
+            <v-img
+              src="https://www.rcn.org.uk/-/media/royal-college-of-nursing/images/blog-800x400/general-blog-images/vote-in-the-egm.jpg"
+              aspect-ratio="2.75"
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0" style="text-align:left">Lets Vote</h3>
+                <div>
+                  <ul style="text-align:left">
+                    <li>Codefundo++ 2k19 Application</li>
+                    <li>Django</li>
+                    <li>Azure Blockchain Services</li>
+                  </ul>
+                </div>
+              </div>
+            </v-card-title>
+
+            <v-card-actions>
+              <a href="https://github.com/nishantwrp/Codefundo-2k19" target="_blank">
+                <v-btn flat color="secondary">Repository</v-btn>
+              </a>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+        <!-- Student Progress Analyser App -->
+        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+          <v-card>
+            <v-img
+              src="https://www.itweb.co.za/static/pictures/2018/05/resized/-fs-Higher-Education-2018.xl.jpg"
+              aspect-ratio="2.75"
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0" style="text-align:left">Student Progress Analyser</h3>
+                <div>
+                  <ul style="text-align:left">
+                    <li>Django</li>
+                    <li>Django Rest Framework</li>
+                    <li>Sci-kit Learn</li>
+                    <li>drf-yasg Swagger Generator</li>
+                  </ul>
+                </div>
+              </div>
+            </v-card-title>
+
+            <v-card-actions>
+              <a href="https://github.com/nishantwrp/Student-Management" target="_blank">
+                <v-btn flat color="secondary">Repository</v-btn>
+              </a>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+        <!-- SPA App -->
+      </v-layout>
   </v-container>
 </template>
 
