@@ -50,7 +50,7 @@ export default {
       }.bind(this)
     );
     axios
-      .get(`https://codeforces.com/api/user.rating?handle=nishantwrp`)
+      .get(`https://codeforces.com/api/user.rating?handle=nishantwrp`, {timeout : 2000})
       .then(response => {
         // JSON responses are automatically parsed.
         this.allratings = response.data.result;
