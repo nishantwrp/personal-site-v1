@@ -11,4 +11,4 @@ This is a responsive website designed with the help of VueJS Frontend Framework 
 ### Acknowledgements
 - Font Awesome
 - Netlify
-- Stylus
+- Stylus 
