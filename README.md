@@ -8,7 +8,7 @@ This is a responsive website designed with the help of VueJS Frontend Framework 
 - Vuetify Frontend UI 
 - Axios For API Consumption
 
-### Acknowledgements
+### Acknowledgements 
 - Font Awesome
 - Netlify
 - Stylus
