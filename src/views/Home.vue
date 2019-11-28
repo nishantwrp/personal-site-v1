@@ -27,7 +27,7 @@
           style="font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;padding:5px;"
         >
           <p>Hello, I'm Nishant Mittal, studying Computer Science And Engineering at IIT(BHU) Varanasi, from Sangrur,Punjab. I have cleared the JEE Mains and Advanced Exams with national ranks ~900 each.</p>
-          <p>I am really passionate about Competitive Programming and Web Development. I am currently exploring the field of Machine Learning. I love to learn about new technologies related to the field of Computer Science. I have worked with technologies like Django, VueJS, Sci-kit Learn, Git.</p>
+          <p>I am really passionate about Competitive Programming and Web Development. I am currently exploring the field of Machine Learning. I love to learn about new technologies related to the field of Computer Science. I have worked with technologies like Django, VueJS, Angular, Electron, Sci-kit Learn, Git.</p>
         </v-flex>
       </v-layout>
     </v-container>
@@ -74,6 +74,7 @@
                 <h3 class="headline mb-0" style="text-align:left">Web Development</h3>
                 <div>
                   <ul style="text-align:left">
+                    <li>An active open source contributor</li>
                     <li>Secured 1st position in Microsoft Codefundo++ 2k19 in the institute</li>
                     <li>Secured 3rd position in Microsoft Codefundo++ 2k18 in the institute</li>
                   </ul>

@@ -170,7 +170,38 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <!-- SPA App -->
+        <!-- Scraper App -->
+        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+          <v-card>
+            <v-img
+              src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-scraping-attack.jpg"
+              aspect-ratio="2.75"
+              height="200px"
+            ></v-img>
+
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0" style="text-align:left">GSOC Organizations</h3>
+                <div>
+                  <ul style="text-align:left">
+                    <li>Scraped the organizations data from official gsoc archive using scrapy and displayed them on jekyll powered website</li>
+                    <li>Scrapy</li>
+                    <li>Jekyll</li>
+                  </ul>
+                </div>
+              </div>
+            </v-card-title>
+
+            <v-card-actions>
+              <a href="https://github.com/nishantwrp/gsoc-organizations-site" target="_blank">
+                <v-btn flat color="secondary">Repository</v-btn>
+              </a>
+              <a href="https://gsoc-organizations.netlify.com/" target="_blank">
+                <v-btn flat color="secondary">App</v-btn>
+              </a>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
       </v-layout>
   </v-container>
 </template>
