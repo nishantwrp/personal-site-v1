@@ -68,7 +68,7 @@
               <a href="https://github.com/nishantwrp/polls" target="_blank">
                 <v-btn flat color="secondary">Repository</v-btn>
               </a>
-               <a href="https://pollswrp.netlify.com/" target="_blank">
+              <a href="https://pollswrp.netlify.com/" target="_blank">
                 <v-btn flat color="secondary">App</v-btn>
               </a>
             </v-card-actions>
@@ -76,7 +76,7 @@
         </v-flex>
         <!-- Polls App -->
         <!-- sublime-backup -->
-          <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
           <v-card>
             <v-img
               src="https://wpvivid.com/wp-content/uploads/2019/02/wpvivid-banner.png"
@@ -102,7 +102,7 @@
               <a href="https://github.com/nishantwrp/sublime-backup-cli" target="_blank">
                 <v-btn flat color="secondary">Repository</v-btn>
               </a>
-               <a href="https://pypi.org/project/sublime-backup/" target="_blank">
+              <a href="https://pypi.org/project/sublime-backup/" target="_blank">
                 <v-btn flat color="secondary">Pypi</v-btn>
               </a>
             </v-card-actions>
@@ -111,98 +111,134 @@
         <!-- sublime-backup -->
       </v-layout>
     </v-container>
-      <v-layout row text-xs-center wrap>
-        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
-          <v-card>
-            <v-img
-              src="https://www.rcn.org.uk/-/media/royal-college-of-nursing/images/blog-800x400/general-blog-images/vote-in-the-egm.jpg"
-              aspect-ratio="2.75"
-              height="200px"
-            ></v-img>
+    <v-layout row text-xs-center wrap>
+      <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+        <v-card>
+          <v-img
+            src="https://www.rcn.org.uk/-/media/royal-college-of-nursing/images/blog-800x400/general-blog-images/vote-in-the-egm.jpg"
+            aspect-ratio="2.75"
+            height="200px"
+          ></v-img>
 
-            <v-card-title primary-title>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0" style="text-align:left">Lets Vote</h3>
               <div>
-                <h3 class="headline mb-0" style="text-align:left">Lets Vote</h3>
-                <div>
-                  <ul style="text-align:left">
-                    <li>Codefundo++ 2k19 Application</li>
-                    <li>Django</li>
-                    <li>Azure Blockchain Services</li>
-                  </ul>
-                </div>
+                <ul style="text-align:left">
+                  <li>Codefundo++ 2k19 Application</li>
+                  <li>Django</li>
+                  <li>Azure Blockchain Services</li>
+                </ul>
               </div>
-            </v-card-title>
+            </div>
+          </v-card-title>
 
-            <v-card-actions>
-              <a href="https://github.com/nishantwrp/Codefundo-2k19" target="_blank">
-                <v-btn flat color="secondary">Repository</v-btn>
-              </a>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-        <!-- Student Progress Analyser App -->
-        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
-          <v-card>
-            <v-img
-              src="https://www.itweb.co.za/static/pictures/2018/05/resized/-fs-Higher-Education-2018.xl.jpg"
-              aspect-ratio="2.75"
-              height="200px"
-            ></v-img>
+          <v-card-actions>
+            <a href="https://github.com/nishantwrp/Codefundo-2k19" target="_blank">
+              <v-btn flat color="secondary">Repository</v-btn>
+            </a>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+      <!-- Student Progress Analyser App -->
+      <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+        <v-card>
+          <v-img
+            src="https://www.itweb.co.za/static/pictures/2018/05/resized/-fs-Higher-Education-2018.xl.jpg"
+            aspect-ratio="2.75"
+            height="200px"
+          ></v-img>
 
-            <v-card-title primary-title>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0" style="text-align:left">Student Progress Analyser</h3>
               <div>
-                <h3 class="headline mb-0" style="text-align:left">Student Progress Analyser</h3>
-                <div>
-                  <ul style="text-align:left">
-                    <li>Django</li>
-                    <li>Django Rest Framework</li>
-                    <li>Sci-kit Learn</li>
-                    <li>drf-yasg Swagger Generator</li>
-                  </ul>
-                </div>
+                <ul style="text-align:left">
+                  <li>Django</li>
+                  <li>Django Rest Framework</li>
+                  <li>Sci-kit Learn</li>
+                  <li>drf-yasg Swagger Generator</li>
+                </ul>
               </div>
-            </v-card-title>
+            </div>
+          </v-card-title>
 
-            <v-card-actions>
-              <a href="https://github.com/nishantwrp/Student-Management" target="_blank">
-                <v-btn flat color="secondary">Repository</v-btn>
-              </a>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-        <!-- Scraper App -->
-        <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
-          <v-card>
-            <v-img
-              src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-scraping-attack.jpg"
-              aspect-ratio="2.75"
-              height="200px"
-            ></v-img>
+          <v-card-actions>
+            <a href="https://github.com/nishantwrp/Student-Management" target="_blank">
+              <v-btn flat color="secondary">Repository</v-btn>
+            </a>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+      <!-- Scraper App -->
+      <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+        <v-card>
+          <v-img
+            src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/web-scraping-attack.jpg"
+            aspect-ratio="2.75"
+            height="200px"
+          ></v-img>
 
-            <v-card-title primary-title>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0" style="text-align:left">GSOC Organizations</h3>
               <div>
-                <h3 class="headline mb-0" style="text-align:left">GSOC Organizations</h3>
-                <div>
-                  <ul style="text-align:left">
-                    <li>Scraped the organizations data from official gsoc archive using scrapy and displayed them on jekyll powered website</li>
-                    <li>Scrapy</li>
-                    <li>Jekyll</li>
-                  </ul>
-                </div>
+                <ul style="text-align:left">
+                  <li>Scraped the organizations data from official gsoc archive using scrapy and displayed them on jekyll powered website</li>
+                  <li>Scrapy</li>
+                  <li>Jekyll</li>
+                </ul>
               </div>
-            </v-card-title>
+            </div>
+          </v-card-title>
 
-            <v-card-actions>
-              <a href="https://github.com/nishantwrp/gsoc-organizations-site" target="_blank">
-                <v-btn flat color="secondary">Repository</v-btn>
-              </a>
-              <a href="https://gsoc-organizations.netlify.com/" target="_blank">
-                <v-btn flat color="secondary">App</v-btn>
-              </a>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
+          <v-card-actions>
+            <a href="https://github.com/nishantwrp/gsoc-organizations-site" target="_blank">
+              <v-btn flat color="secondary">Repository</v-btn>
+            </a>
+            <a href="https://gsoc-organizations.netlify.com/" target="_blank">
+              <v-btn flat color="secondary">App</v-btn>
+            </a>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
+    <!-- New row -->
+     <v-layout row text-xs-center wrap>
+      <v-flex xs12 sm6 md4 lg4 xl4 style="padding:5px;">
+        <v-card>
+          <v-img
+            src="https://techmeetups.com/wp-content/uploads/2019/06/blogging-SMB.png"
+            aspect-ratio="2.75"
+            height="200px"
+          ></v-img>
+
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0" style="text-align:left">BlogIt</h3>
+              <div>
+                <ul style="text-align:left">
+                  <li>An application to create and view blogs in markdown format with the chat room feature implemented using web sockets</li>
+                  <li>Django</li>
+                  <li>Django Social Auth</li>
+                  <li>Django Channels</li>
+                  <li>Redis</li>
+                </ul>
+              </div>
+            </div>
+          </v-card-title>
+
+          <v-card-actions>
+            <a href="https://github.com/nishantwrp/BlogIt" target="_blank">
+              <v-btn flat color="secondary">Repository</v-btn>
+            </a>
+            <a href="https://blog-it-web.herokuapp.com/" target="_blank">
+              <v-btn flat color="secondary">App</v-btn>
+            </a>
+          </v-card-actions>
+        </v-card>
+      </v-flex> 
+    </v-layout>
   </v-container>
 </template>
 

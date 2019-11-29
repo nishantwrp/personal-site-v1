@@ -24,7 +24,7 @@ border-color: #fafafa !important;"
         <router-link to="/contact">
           <v-btn outline color="primary">Contact</v-btn>
         </router-link>
-        <a href="https://www.visualcv.com/nishantwrp/pdf/" target="_blank">
+        <a href="https://drive.google.com/open?id=17KST1nLZZnOEEGKMYq4peQow3ZKDbQYg" target="_blank">
           <v-btn color="primary">DOWNLOAD CV</v-btn>
         </a>
       </div>
