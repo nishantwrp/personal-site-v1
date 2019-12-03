@@ -78,7 +78,7 @@ border-color: #fafafa !important;"
         </v-list-tile>
 
         <v-list-tile>
-          <a href="https://www.visualcv.com/nishantwrp/pdf/" target="_blank">
+          <a href="https://drive.google.com/open?id=17KST1nLZZnOEEGKMYq4peQow3ZKDbQYg" target="_blank">
             <v-list-tile-content>
               <v-list-tile-title>Download CV</v-list-tile-title>
             </v-list-tile-content>
