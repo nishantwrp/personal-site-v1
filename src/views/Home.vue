@@ -46,7 +46,7 @@
                 <h3 class="headline mb-0" style="text-align:left">Competitive Programming</h3>
                 <div>
                   <ul style="text-align:left">
-                    <li>An Expert Level programmer on Codeforces (Max Rating - {{maxrating}})</li>
+                    <li>An Expert Level programmer on <a :href="handle">Codeforces</a> (Max Rating - {{maxrating}})</li>
                     <li>A Division 1 programmer on Codechef</li>
                   </ul>
                 </div>
@@ -132,7 +132,8 @@ export default {
     ]
   }),
   props: {
-    maxrating: Number
+    maxrating: Number,
+    handle: String
   }
 };
 </script>
