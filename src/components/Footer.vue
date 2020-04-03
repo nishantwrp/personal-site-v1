@@ -2,7 +2,7 @@
   <v-footer dark height="auto">
     <v-card flat tile class="indigo flex lighten-1 white--text text-xs-center">
       <v-card-text>
-        <a v-for="profile in profiles" :href="profile.link" target="_blank">
+        <a v-for="profile in profiles" :key="profile" :href="profile.link" target="_blank">
           <v-btn :key="profile.icon" class="mx-3 white--text" icon>
             <v-icon size="24px">{{ profile.icon }}</v-icon>
           </v-btn>
@@ -21,7 +21,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        &copy;2019 —
+        &copy;2020 —
         <strong>Nishant Mittal</strong>
       </v-card-text>
     </v-card>
