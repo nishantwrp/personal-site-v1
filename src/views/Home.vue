@@ -92,7 +92,7 @@
         <v-flex xs12 sm12 md4 lg4 xl4 style="padding:5px;">
           <v-card>
             <v-img
-              src="https://static.interestingengineering.com/images/FEBRUARY/sizes/Machine-Learning_resize_md.jpg"
+              src="https://hackernoon.com/drafts/e11c20yk.png"
               aspect-ratio="2.75"
               height="200px"
             ></v-img>
