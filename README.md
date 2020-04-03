@@ -5,10 +5,14 @@ This is a responsive website designed with the help of VueJS Frontend Framework 
 
 ### Technical Stack
 - VueJS Frontend Framework
-- Vuetify Frontend UI 
+- Vuetify Frontend UI
 - Axios For API Consumption
 
 ### Acknowledgements
 - Font Awesome
 - Netlify
 - Stylus
+
+### Running Locally
+- `yarn install`
+- `yarn run serve`
