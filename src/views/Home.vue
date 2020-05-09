@@ -74,6 +74,7 @@
                 <h3 class="headline mb-0" style="text-align:left">Web Development</h3>
                 <div>
                   <ul style="text-align:left">
+                    <li><a href="https://summerofcode.withgoogle.com/projects/#4778102950985728">GSoC'20 with Oppia</a></li>
                     <li>An active open source contributor</li>
                     <li>Secured 1st position in Microsoft Codefundo++ 2k19 in the institute</li>
                     <li>Secured 3rd position in Microsoft Codefundo++ 2k18 in the institute</li>
