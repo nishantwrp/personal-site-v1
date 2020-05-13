@@ -32,19 +32,6 @@
             <v-list two-line>
               <v-list-tile>
                 <v-list-tile-action>
-                  <v-icon color="indigo">fas fa-phone-volume</v-icon>
-                </v-list-tile-action>
-
-                <v-list-tile-content>
-                  <v-list-tile-title>941-790-7862</v-list-tile-title>
-                  <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
-                </v-list-tile-content>
-              </v-list-tile>
-
-              <v-divider inset></v-divider>
-
-              <v-list-tile>
-                <v-list-tile-action>
                   <v-icon color="indigo">fas fa-envelope</v-icon>
                 </v-list-tile-action>
 
