@@ -9,20 +9,11 @@
         </a>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Source Code Of This Website Is Available Here
-        <a
-          href="https://github.com/nishantwrp/nishantwrp-website"
-        >
-          <v-btn small color="primary">GITHUB REPO</v-btn>
-        </a>
-      </v-card-text>
-
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        &copy;2020 —
-        <strong>Nishant Mittal</strong>
+        Made with <span style="color: #e25555; font-size: 18px;">&#9829;</span> by
+        <strong><a href="https://github.com/nishantwrp/nishantwrp-website" style="color: white" target="_blank">nishantwrp</a></strong>
       </v-card-text>
     </v-card>
   </v-footer>
