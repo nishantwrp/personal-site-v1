@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div style="height:100vh;width:100vw;text-align:center;" id="falseapp">
+    <div style="height:100vh;width:100vw;text-align:center;" v-if="!$store.getters.isCodeforcesLoaded">
       <table style="height:100%;width:100%;">
         <tr style="height:100%;width:100%;">
           <td>
-            <LoadingLogo logocolor="#3f51b5" />
+            <LoadingLogo />
           </td>
         </tr>
       </table>
     </div>
-    <v-app id="mainapp" class="hideit">
+    <v-app v-if="$store.getters.isCodeforcesLoaded">
       <NavBar :scrolled="scrollfun" />
       <slot />
       <Footer />
@@ -29,7 +29,7 @@ query {
 import LoadingLogo from "../components/LoadingLogo";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import axios from "axios";
+
 export default {
   name: "App",
   components: {
@@ -40,9 +40,6 @@ export default {
   data() {
     return {
       haveScrolled: false,
-      allratings: [],
-      maxrating: 0,
-      codeforces_account: "nishantwrp"
     };
   },
   mounted: function() {
@@ -56,43 +53,7 @@ export default {
         }
       }.bind(this)
     );
-    axios
-      .get(`https://codeforces.com/api/user.rating?handle=nishantwrp`, {
-        timeout: 2000
-      })
-      .then(response => {
-        // JSON responses are automatically parsed.
-        this.allratings = response.data.result;
-        var i = 0;
-        while (i < this.allratings.length) {
-          if (this.maxrating < this.allratings[i].newRating) {
-            this.maxrating = this.allratings[i].newRating;
-          }
-          i += 1;
-        }
-        axios
-          .get(`https://codeforces.com/api/user.rating?handle=nishantwrp_2`, {
-            timeout: 2000
-          })
-          .then(response => {
-            var second_profile_ratings = response.data.result;
-            var i = 0;
-            while (i < second_profile_ratings.length) {
-              if (this.maxrating < second_profile_ratings[i].newRating) {
-                this.maxrating = second_profile_ratings[i].newRating;
-                this.codeforces_account = "nishantwrp_2";
-              }
-              i += 1;
-            }
-          });
-        document.querySelector("#falseapp").classList.add("hideit");
-        document.querySelector("#mainapp").classList.remove("hideit");
-      })
-      .catch(e => {
-        console.log(e);
-        document.querySelector("#falseapp").classList.add("hideit");
-        document.querySelector("#mainapp").classList.remove("hideit");
-      });
+    this.$store.dispatch('get_codeforces_data');
   },
   computed: {
     scrollfun() {
@@ -101,12 +62,6 @@ export default {
       } else {
         return false;
       }
-    },
-    themax() {
-      return this.maxrating;
-    },
-    handle() {
-      return "https://www.codeforces.com/profile/" + this.codeforces_account;
     }
   }
 };

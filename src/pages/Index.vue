@@ -49,8 +49,8 @@
                     <ul style="text-align:left">
                       <li>
                         An Expert Level programmer on
-                        <a :href="handle">Codeforces</a>
-                        (Max Rating - {{maxrating}})
+                        <a :href="$store.getters.codeforces.profileUrl" target="_blank">Codeforces</a>
+                        (Max Rating - {{ $store.getters.codeforces.maxRating }})
                       </li>
                       <li>A Division 1 programmer on Codechef</li>
                     </ul>

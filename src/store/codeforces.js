@@ -8,7 +8,7 @@ let getMaxRating = (username) => {
         const allContests = data.result;
         let maxRating = 0;
         for (let { newRating } of allContests) {
-            maxRating = max([newRating, maxRating]);
+            maxRating = Math.max(newRating, maxRating);
         }
         return {
             maxRating: maxRating,
@@ -21,7 +21,8 @@ export default {
     state: {
         codeforces: {
             maxRating: null,
-            username: null
+            username: null,
+            profileUrl: null
         }
     },
     getters: {
@@ -29,14 +30,15 @@ export default {
             return state.codeforces;
         },
         isCodeforcesLoaded: state => {
-            return !!(state.codeforces.maxRating && state.codeforces.username);
+            return state.codeforces.maxRating;
         }
     },
     mutations: {
         SET_CODEFORCES_DATA(state, data) {
-            const { maxRating, username } = data;
+            const { maxRating, username, profileUrl } = data;
             state.codeforces.maxRating = maxRating;
             state.codeforces.username = username;
+            state.codeforces.profileUrl = profileUrl;
         }
     },
     actions: {
@@ -50,11 +52,14 @@ export default {
             Promise.all(ratingPromises).then((ratings) => {
                 let codeforcesData = {
                     maxRating: 0,
-                    username: ''
+                    username: '',
+                    profileUrl: ''
                 }
                 for (let rating of ratings) {
                     if (codeforcesData.maxRating < rating.maxRating) {
-                        codeforcesData = rating;
+                        codeforcesData.maxRating = rating.maxRating;
+                        codeforcesData.username = rating.username;
+                        codeforcesData.profileUrl = 'https://codeforces.com/profile/' + codeforcesData.username;
                     }
                 }
                 commit('SET_CODEFORCES_DATA', codeforcesData);
