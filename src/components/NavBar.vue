@@ -88,6 +88,7 @@ border-color: #fafafa !important;"
     </v-navigation-drawer>
   </div>
 </template>
+
 <script>
 import Logo from "./Logo";
 export default {
@@ -112,6 +113,7 @@ export default {
   }
 };
 </script>
+
 <style module lang="css">
 a {
   text-decoration: none;

@@ -2,7 +2,7 @@
   <v-footer dark height="auto">
     <v-card flat tile class="indigo flex lighten-1 white--text text-xs-center">
       <v-card-text>
-        <a v-for="profile in profiles" :key="profile" :href="profile.link" target="_blank">
+        <a v-for="profile in profiles" :key="profile.link" :href="profile.link" target="_blank">
           <v-btn :key="profile.icon" class="mx-3 white--text" icon>
             <v-icon size="24px">{{ profile.icon }}</v-icon>
           </v-btn>
@@ -27,6 +27,7 @@
     </v-card>
   </v-footer>
 </template>
+
 <script>
 export default {
   data: () => ({
@@ -47,5 +48,6 @@ export default {
   })
 };
 </script>
+
 <style module lang="css">
 </style>

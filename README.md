@@ -1,18 +1,14 @@
-# Source Code
+# Default starter for Gridsome
 
-## About
-This is a responsive website designed with the help of VueJS Frontend Framework along with Vuetify UI Framwork as a Material Design UI. Axios is also used to fetch the max rating of the user using Codeforces API.
+This is the project you get when you run `gridsome create new-project`.
 
-### Technical Stack
-- VueJS Frontend Framework
-- Vuetify Frontend UI
-- Axios For API Consumption
+### 1. Install Gridsome CLI tool if you don't have
 
-### Acknowledgements
-- Font Awesome
-- Netlify
-- Stylus
+`npm install --global @gridsome/cli`
 
-### Running Locally
-- `yarn install`
-- `yarn run serve`
+### 2. Create a Gridsome project
+
+1. `gridsome create my-gridsome-site` to install default starter
+2. `cd my-gridsome-site` to open the folder
+3. `gridsome develop` to start a local dev server at `http://localhost:8080`
+4. Happy coding 🎉🙌

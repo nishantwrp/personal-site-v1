@@ -5,6 +5,7 @@
     </span>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -36,10 +37,11 @@ export default {
   }
 };
 </script>
+
 <style module lang="css">
 @font-face {
   font-family: "New Walt Disney";
-  src: url("../assets/fonts/New Walt Disney.ttf") format("truetype");
+  src: url("/fonts/New Walt Disney.ttf") format("truetype");
 }
 @keyframes spin {
   0% {
