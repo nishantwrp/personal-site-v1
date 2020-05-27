@@ -2,8 +2,7 @@
   <div>
     <v-toolbar
       v-if="scrolled === false"
-      style="background-color: #fafafa !important;
-border-color: #fafafa !important;"
+      style="background-color: #fafafa !important; border-color: #fafafa !important;"
       flat
       fixed
     >

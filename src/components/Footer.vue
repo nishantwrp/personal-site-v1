@@ -39,6 +39,3 @@ export default {
   })
 };
 </script>
-
-<style module lang="css">
-</style>

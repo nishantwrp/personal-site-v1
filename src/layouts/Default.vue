@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div style="height:100vh;width:100vw;text-align:center;" :class="[hideClassLoading]">
-      <table style="height:100%;width:100%;">
-        <tr style="height:100%;width:100%;">
+    <div :class="$style.fullPage" v-show="!$store.getters.isCodeforcesLoaded">
+      <table :class="$style.loadingDiv">
+        <tr :class="$style.loadingDiv">
           <td>
             <LoadingLogo />
           </td>
         </tr>
       </table>
     </div>
-    <v-app :class="[hideClassApp]">
+    <v-app v-show="$store.getters.isCodeforcesLoaded">
       <NavBar :scrolled="scrollfun" />
       <slot />
       <Footer />
@@ -63,29 +63,20 @@ export default {
       } else {
         return false;
       }
-    },
-    hideClassLoading() {
-      if (this.$store.getters.isCodeforcesLoaded) {
-        return 'hideit';
-      }
-    },
-    hideClassApp() {
-      if (!this.$store.getters.isCodeforcesLoaded) {
-        return 'hideit';
-      }
     }
   }
 };
 </script>
 
-<style>
-body {
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
+<style module lang="css">
+.fullPage {
+  height:100vh;
+  width:100vw;
+  text-align:center;
 }
 
-.hideit {
-  display: none !important;
+.loadingDiv {
+  height:100%;
+  width:100%;
 }
 </style>

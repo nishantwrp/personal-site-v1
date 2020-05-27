@@ -1,13 +1,11 @@
 <template>
   <Layout>
-    <v-container style="padding-top:40px;">
+    <v-container :class="$style.topContainer">
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
             <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
-            <h1
-              style="color:#3f51b5;font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;"
-            >My Portfolio</h1>
+            <h1 :class="$style.text">My Portfolio</h1>
           </v-flex>
         </v-layout>
       </v-container>
@@ -86,3 +84,14 @@ export default {
   }
 };
 </script>
+
+<style module lang="css">
+.topContainer {
+  padding-top:40px;
+}
+
+.text {
+  color:#3f51b5;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+</style>

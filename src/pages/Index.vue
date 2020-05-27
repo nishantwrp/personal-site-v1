@@ -1,13 +1,11 @@
 <template>
   <Layout>
-    <v-container style="padding-top:40px;" >
+    <v-container :class="$style.topContainer">
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
             <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
-            <h1
-              style="color:#3f51b5;font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;"
-            >Hi, Welcome To My Website</h1>
+            <h1 :class="$style.text">Hi, Welcome To My Website</h1>
           </v-flex>
         </v-layout>
       </v-container>
@@ -25,7 +23,7 @@
             md8
             sm6
             xs12
-            style="font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;padding:5px;"
+            :class="$style.blackText"
           >
             <p>Hello, I'm Nishant Mittal, studying Computer Science And Engineering at IIT(BHU) Varanasi, from Sangrur,Punjab. I have cleared the JEE Mains and Advanced Exams with national ranks ~900 each.</p>
             <p>I am really passionate about Competitive Programming and Web Development. I am currently exploring the field of Machine Learning. I love to learn about new technologies related to the field of Computer Science. I have worked with technologies like Django, VueJS, Angular, Electron, Sci-kit Learn, Git.</p>
@@ -148,8 +146,17 @@ export default {
 };
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style module lang="css">
+.topContainer {
+  padding-top:40px;
+}
+
+.text {
+  color:#3f51b5;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.blackText {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
 </style>
