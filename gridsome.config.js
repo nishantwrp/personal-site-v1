@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Nishant Mittal',
+  shortName: 'nishantwrp',
   plugins: [
     {
       use: '@gridsome/plugin-google-analytics',
