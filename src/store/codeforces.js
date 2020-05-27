@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { Promise } from 'core-js';
 
 const CODEFORCES_USERNAMES = ['nishantwrp', 'nishantwrp_2']
 
@@ -30,7 +29,7 @@ export default {
             return state.codeforces;
         },
         isCodeforcesLoaded: state => {
-            return state.codeforces.maxRating;
+            return !!state.codeforces.maxRating;
         }
     },
     mutations: {

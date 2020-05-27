@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="height:100vh;width:100vw;text-align:center;" v-if="!$store.getters.isCodeforcesLoaded">
+    <div style="height:100vh;width:100vw;text-align:center;" :class="[hideClassLoading]">
       <table style="height:100%;width:100%;">
         <tr style="height:100%;width:100%;">
           <td>
@@ -9,7 +9,7 @@
         </tr>
       </table>
     </div>
-    <v-app v-if="$store.getters.isCodeforcesLoaded">
+    <v-app :class="[hideClassApp]">
       <NavBar :scrolled="scrollfun" />
       <slot />
       <Footer />
@@ -61,6 +61,16 @@ export default {
         return true;
       } else {
         return false;
+      }
+    },
+    hideClassLoading() {
+      if (this.$store.getters.isCodeforcesLoaded) {
+        return 'hideit';
+      }
+    },
+    hideClassApp() {
+      if (!this.$store.getters.isCodeforcesLoaded) {
+        return 'hideit';
       }
     }
   }
