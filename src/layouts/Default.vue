@@ -53,7 +53,8 @@ export default {
         }
       }.bind(this)
     );
-    this.$store.dispatch('get_codeforces_data');
+
+    this.$store.dispatch('get_codeforces_data', { vm: this });
   },
   computed: {
     scrollfun() {

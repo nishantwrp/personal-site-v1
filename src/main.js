@@ -10,6 +10,8 @@ import 'vuetify/dist/vuetify.min.css';
 import Vuex from 'vuex';
 import codeforces from './store/codeforces';
 
+import VueCookies from 'vue-cookies'
+
 const headLinks = [
   {
     rel: 'stylesheet',
@@ -57,6 +59,8 @@ export default function (Vue, { appOptions, router, head, isClient }) {
       codeforces
     }
   });
+
+  Vue.use(VueCookies);
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
