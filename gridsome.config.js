@@ -12,6 +12,13 @@ module.exports = {
       options: {
         id: 'UA-114654874-2'
       }
+    },
+    {
+      use: 'gridsome-plugin-pwa',
+      options: {
+        title: 'Nishant Mittal',
+        icon: 'src/favicon.png'
+      }
     }
   ]
 }
