@@ -17,7 +17,8 @@ module.exports = {
       use: 'gridsome-plugin-pwa',
       options: {
         title: 'Nishant Mittal',
-        icon: 'src/favicon.png'
+        icon: 'src/favicon.png',
+        disableServiceWorker: false
       }
     }
   ]
