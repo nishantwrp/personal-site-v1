@@ -6,7 +6,6 @@
 
 module.exports = {
   siteName: 'Nishant Mittal',
-  shortName: 'nishantwrp',
   plugins: [
     {
       use: '@gridsome/plugin-google-analytics',
@@ -18,6 +17,7 @@ module.exports = {
       use: 'gridsome-plugin-pwa',
       options: {
         title: 'Nishant Mittal',
+        shortName: 'nishantwrp',
         icon: 'src/favicon.png',
         disableServiceWorker: false
       }
