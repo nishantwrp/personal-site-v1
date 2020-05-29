@@ -48,7 +48,9 @@
                       <li>
                         An Expert Level programmer on
                         <a :href="$store.getters.codeforces.profileUrl" target="_blank">Codeforces</a>
+                        <span v-if="$store.getters.codeforces.maxRating != 'Error'">
                         (Max Rating - {{ $store.getters.codeforces.maxRating }})
+                        </span>
                       </li>
                       <li>A Division 1 programmer on Codechef</li>
                     </ul>

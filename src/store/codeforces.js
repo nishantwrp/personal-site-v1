@@ -81,6 +81,14 @@ export default {
 
                     cacheCodeforcesData(codeforcesData, vm);
                     commit('SET_CODEFORCES_DATA', codeforcesData);
+                }, () => {
+                    let altCodeforcesData = {
+                        maxRating: 'Error',
+                        username: CODEFORCES_USERNAMES[0],
+                        profileUrl: 'https://codeforces.com/profile/' + CODEFORCES_USERNAMES[0]
+                    };
+
+                    commit('SET_CODEFORCES_DATA', altCodeforcesData);
                 });
             }
         }
