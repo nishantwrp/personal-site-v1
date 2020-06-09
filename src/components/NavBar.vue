@@ -20,9 +20,6 @@
         <router-link to="/portfolio">
           <v-btn outline color="primary">Portfolio</v-btn>
         </router-link>
-        <router-link to="/contact">
-          <v-btn outline color="primary">Contact</v-btn>
-        </router-link>
         <a href="https://drive.google.com/open?id=17KST1nLZZnOEEGKMYq4peQow3ZKDbQYg" target="_blank">
           <v-btn color="primary">DOWNLOAD CV</v-btn>
         </a>
@@ -50,9 +47,6 @@
         </router-link>
         <router-link to="/portfolio">
           <v-btn outline color="primary">Portfolio</v-btn>
-        </router-link>
-        <router-link to="/contact">
-          <v-btn outline color="primary">Contact</v-btn>
         </router-link>
         <a href="https://www.visualcv.com/nishantwrp/pdf/" target="_blank">
           <v-btn color="primary">DOWNLOAD CV</v-btn>
@@ -106,7 +100,6 @@ export default {
       items: [
         { title: "Home", icon: "dashboard", link: "/" },
         { title: "Portfolio", icon: "dashboard", link: "/portfolio" },
-        { title: "Contact", icon: "question_answer", link: "/contact" }
       ]
     };
   }

@@ -34,7 +34,7 @@ export default {
         link: "https://www.instagram.com/nishantwrp/"
       },
       { icon: "fab fa-github", link: "https://www.github.com/nishantwrp" },
-      { icon: "fas fa-envelope", link: "mailto:mittalnishant14@outlook.com" }
+      { icon: "fas fa-envelope", link: "mailto:admin@nishantwrp.com" }
     ]
   })
 };

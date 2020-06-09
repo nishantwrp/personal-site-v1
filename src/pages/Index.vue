@@ -14,7 +14,7 @@
         <v-layout row text-xs-center wrap>
           <v-flex xl4 lg4 md4 sm6 xs12>
             <v-avatar size="150px" color="grey lighten-4">
-              <img src="https://avatars3.githubusercontent.com/u/36989112?s=460&v=4" />
+              <img :src="introContent.photoUrl" />
             </v-avatar>
           </v-flex>
           <v-flex
@@ -25,8 +25,7 @@
             xs12
             :class="$style.blackText"
           >
-            <p>Hello, I'm Nishant Mittal, studying Computer Science And Engineering at IIT(BHU) Varanasi, from Sangrur,Punjab. I have cleared the JEE Mains and Advanced Exams with national ranks ~900 each.</p>
-            <p>I am really passionate about Competitive Programming and Web Development. I am currently exploring the field of Machine Learning. I love to learn about new technologies related to the field of Computer Science. I have worked with technologies like Django, VueJS, Angular, Electron, Sci-kit Learn, Git.</p>
+            <p v-for="paraContent in introContent.content.content" :key="paraContent.content.value">{{ paraContent.content[0].value }}</p>
           </v-flex>
         </v-layout>
       </v-container>
@@ -131,6 +130,19 @@
   </Layout>
 </template>
 
+<page-query>
+query {
+  allContentfulIntro {
+    edges {
+      node {
+        photoUrl
+        content
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 export default {
   metaInfo: {
@@ -144,7 +156,13 @@ export default {
         href: "/"
       }
     ]
-  })
+  }),
+  computed: {
+    introContent() {
+      console.log(this.$page.allContentfulIntro.edges[0].node);
+      return this.$page.allContentfulIntro.edges[0].node;
+    }
+  }
 };
 </script>
 

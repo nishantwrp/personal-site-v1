@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
+    "@gridsome/source-contentful": "^0.5.2",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "gridsome": "^0.7.0",
     "gridsome-plugin-pwa": "^0.0.17",
     "vue-cookies": "^1.7.0",
