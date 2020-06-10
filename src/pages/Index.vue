@@ -17,15 +17,11 @@
               <img :src="introContent.photoUrl" />
             </v-avatar>
           </v-flex>
-          <v-flex
-            xl8
-            lg8
-            md8
-            sm6
-            xs12
-            :class="$style.blackText"
-          >
-            <p v-for="paraContent in introContent.content.content" :key="paraContent.content.value">{{ paraContent.content[0].value }}</p>
+          <v-flex xl8 lg8 md8 sm6 xs12 :class="$style.blackText">
+            <p
+              v-for="paraContent in introContent.content.content"
+              :key="paraContent.content.value"
+            >{{ paraContent.content[0].value }}</p>
           </v-flex>
         </v-layout>
       </v-container>
@@ -46,10 +42,13 @@
                     <ul style="text-align:left">
                       <li>
                         An Expert Level programmer on
-                        <a :href="$store.getters.codeforces.profileUrl" target="_blank">Codeforces</a>
-                        <span v-if="$store.getters.codeforces.maxRating != 'Error'">
-                        (Max Rating - {{ $store.getters.codeforces.maxRating }})
-                        </span>
+                        <a
+                          :href="$store.getters.codeforces.profileUrl"
+                          target="_blank"
+                        >Codeforces</a>
+                        <span
+                          v-if="$store.getters.codeforces.maxRating != 'Error'"
+                        >(Max Rating - {{ $store.getters.codeforces.maxRating }})</span>
                       </li>
                       <li>A Division 1 programmer on Codechef</li>
                     </ul>
@@ -159,7 +158,6 @@ export default {
   }),
   computed: {
     introContent() {
-      console.log(this.$page.allContentfulIntro.edges[0].node);
       return this.$page.allContentfulIntro.edges[0].node;
     }
   }
@@ -168,15 +166,15 @@ export default {
 
 <style module lang="css">
 .topContainer {
-  padding-top:40px;
+  padding-top: 40px;
 }
 
 .text {
-  color:#3f51b5;
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  color: #3f51b5;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
 .blackText {
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 </style>

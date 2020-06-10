@@ -8,20 +8,22 @@
     >
       <v-toolbar-title>
         <router-link to="/">
-          <Logo :logosize="25" :logocolor="'#3f51b5'"/>
+          <Logo :logosize="25" :logocolor="'#3f51b5'" />
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <div v-show="$vuetify.breakpoint.mdAndUp">
-        <router-link to="/">
-          <v-btn outline color="primary">Home</v-btn>
+        <router-link v-for="page in pages" :key="page.title" :to="page.link">
+          <v-btn outline color="primary">{{ page.title }}</v-btn>
         </router-link>
-        <router-link to="/portfolio">
-          <v-btn outline color="primary">Portfolio</v-btn>
-        </router-link>
-        <a href="https://drive.google.com/open?id=17KST1nLZZnOEEGKMYq4peQow3ZKDbQYg" target="_blank">
-          <v-btn color="primary">DOWNLOAD CV</v-btn>
+        <a
+          v-for="externalLink in externalLinks"
+          :key="externalLink.title"
+          :href="externalLink.link"
+          target="_blank"
+        >
+          <v-btn color="primary">{{ externalLink.title }}</v-btn>
         </a>
       </div>
 
@@ -36,20 +38,22 @@
     <v-toolbar v-if="scrolled === true" color="white" fixed>
       <v-toolbar-title>
         <router-link to="/">
-          <Logo :logosize="25" :logocolor="'#3f51b5'"/>
+          <Logo :logosize="25" :logocolor="'#3f51b5'" />
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <div v-show="$vuetify.breakpoint.mdAndUp">
-        <router-link to="/">
-          <v-btn outline color="primary">Home</v-btn>
+        <router-link v-for="page in pages" :key="page.title" :to="page.link">
+          <v-btn outline color="primary">{{ page.title }}</v-btn>
         </router-link>
-        <router-link to="/portfolio">
-          <v-btn outline color="primary">Portfolio</v-btn>
-        </router-link>
-        <a href="https://www.visualcv.com/nishantwrp/pdf/" target="_blank">
-          <v-btn color="primary">DOWNLOAD CV</v-btn>
+        <a
+          v-for="externalLink in externalLinks"
+          :key="externalLink.title"
+          :href="externalLink.link"
+          target="_blank"
+        >
+          <v-btn color="primary">{{ externalLink.title }}</v-btn>
         </a>
       </div>
 
@@ -62,18 +66,18 @@
 
     <v-navigation-drawer v-model="drawer" temporary fixed>
       <v-list class="pt-0" dense>
-        <v-list-tile v-for="item in items" :key="item.title">
-          <router-link :to="item.link">
+        <v-list-tile v-for="page in pages" :key="page.title">
+          <router-link :to="page.link">
             <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ page.title }}</v-list-tile-title>
             </v-list-tile-content>
           </router-link>
         </v-list-tile>
 
         <v-list-tile>
-          <a href="https://drive.google.com/open?id=17KST1nLZZnOEEGKMYq4peQow3ZKDbQYg" target="_blank">
+          <a v-for="externalLink in externalLinks" :key="externalLink.title" :href="externalLink.link" target="_blank">
             <v-list-tile-content>
-              <v-list-tile-title>Download CV</v-list-tile-title>
+              <v-list-tile-title>{{ externalLink.title }}</v-list-tile-title>
             </v-list-tile-content>
           </a>
         </v-list-tile>
@@ -97,9 +101,25 @@ export default {
   data() {
     return {
       drawer: null,
-      items: [
-        { title: "Home", icon: "dashboard", link: "/" },
-        { title: "Portfolio", icon: "dashboard", link: "/portfolio" },
+      pages: [
+        {
+          title: "Home",
+          link: "/"
+        },
+        {
+          title: "Categories",
+          link: "/categories"
+        },
+        {
+          title: "Portfolio",
+          link: "/portfolio"
+        }
+      ],
+      externalLinks: [
+        {
+          title: "Download CV",
+          link: "https://github.com/nishantwrp/my-cv/raw/master/nishantwrp.pdf"
+        }
       ]
     };
   }
