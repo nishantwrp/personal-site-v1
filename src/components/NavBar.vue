@@ -111,8 +111,12 @@ export default {
           link: "/categories"
         },
         {
-          title: "Portfolio",
-          link: "/portfolio"
+          title: "Projects",
+          link: "/categories/project"
+        },
+        {
+          title: "Posts",
+          link: "/categories/blog"
         }
       ],
       externalLinks: [

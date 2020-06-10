@@ -1,5 +1,11 @@
 require('dotenv').config()
 
+var slugify = require('slugify')
+
+function slug(title) {
+  return slugify(title, {lower: true});
+}
+
 module.exports = {
   siteName: 'Nishant Mittal',
   plugins: [
@@ -28,5 +34,15 @@ module.exports = {
         typeName: 'Contentful'
       }
     }
-  ]
+  ],
+  templates: {
+    ContentfulTag: [
+      {
+        path: (node) => {
+          return '/categories/' + slug(node.title);
+        },
+        component: './src/templates/Tag.vue'
+      }
+    ]
+  }
 }
