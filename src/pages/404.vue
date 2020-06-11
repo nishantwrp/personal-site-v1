@@ -28,7 +28,7 @@ export default {
       {
         text: "404",
         disabled: false,
-        href: "/404"
+        href: "/404/"
       }
     ]
   })

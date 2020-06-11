@@ -86,7 +86,7 @@ export default {
       {
         text: "Categories",
         disabled: false,
-        href: "/categories"
+        href: "/categories/"
       }
     ]
   }),
@@ -109,10 +109,10 @@ export default {
   },
   methods: {
     tagUrl(title) {
-      return "/categories/" + slug(title);
+      return "/categories/" + slug(title) + "/";
     },
     postUrl(title) {
-      return "/posts/" + slug(title);
+      return "/posts/" + slug(title) + "/";
     },
     createBreadcrumb() {
       this.items.push({

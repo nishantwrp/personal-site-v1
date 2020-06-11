@@ -108,20 +108,20 @@ export default {
         },
         {
           title: "Categories",
-          link: "/categories"
+          link: "/categories/"
         },
         {
           title: "Projects",
-          link: "/categories/project"
+          link: "/categories/project/"
         },
         {
           title: "Blog",
-          link: "/categories/blog"
+          link: "/categories/blog/"
         }
       ],
       externalLinks: [
         {
-          title: "Download CV",
+          title: "Resume",
           link: "https://github.com/nishantwrp/my-cv/raw/master/nishantwrp.pdf"
         }
       ]
