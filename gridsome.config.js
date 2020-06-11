@@ -43,6 +43,14 @@ module.exports = {
         },
         component: './src/templates/Tag.vue'
       }
+    ],
+    ContentfulPost: [
+      {
+        path: (node) => {
+          return '/posts/' + slug(node.title);
+        },
+        component: './src/templates/Post.vue'
+      }
     ]
   }
 }

@@ -115,7 +115,7 @@ export default {
           link: "/categories/project"
         },
         {
-          title: "Posts",
+          title: "Blog",
           link: "/categories/blog"
         }
       ],

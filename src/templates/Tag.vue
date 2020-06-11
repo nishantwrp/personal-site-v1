@@ -14,7 +14,7 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex v-for="post in postsContent" :key="post.node.title">
-            <router-link to="/">
+            <router-link :to="postUrl(post.node.title)">
               <v-card>
                 <v-img :src="post.node.coverImage.file.url" contain="false" height="200px"></v-img>
                 <v-card-title primary-title>
@@ -99,25 +99,27 @@ export default {
     }
   },
   mounted() {
-    this.items.push({
-      text: this.tagContent.title,
-      disabled: false,
-      href: this.tagUrl(this.tagContent.title)
-    });
+    this.createBreadcrumb();
   },
   watch: {
     $route: function() {
       this.items.pop();
-      this.items.push({
-        text: this.tagContent.title,
-        disabled: false,
-        href: this.tagUrl(this.tagContent.title)
-      });
+      this.createBreadcrumb();
     }
   },
   methods: {
     tagUrl(title) {
       return "/categories/" + slug(title);
+    },
+    postUrl(title) {
+      return "/posts/" + slug(title);
+    },
+    createBreadcrumb() {
+      this.items.push({
+        text: this.tagContent.title,
+        disabled: false,
+        href: this.tagUrl(this.tagContent.title)
+      });
     }
   }
 };

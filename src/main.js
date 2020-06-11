@@ -12,6 +12,8 @@ import codeforces from './store/codeforces';
 
 import VueCookies from 'vue-cookies'
 
+import VueMarkdown from 'vue-markdown';
+
 const headLinks = [
   {
     rel: 'stylesheet',
@@ -61,6 +63,9 @@ export default function (Vue, { appOptions, router, head, isClient }) {
   });
 
   Vue.use(VueCookies);
+
+  // Markdown Parser
+  Vue.component('vue-markdown', VueMarkdown);
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

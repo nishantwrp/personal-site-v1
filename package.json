@@ -12,9 +12,11 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-gitalk": "^0.1.0",
     "gridsome-plugin-pwa": "^0.0.17",
     "slugify": "^1.4.0",
     "vue-cookies": "^1.7.0",
+    "vue-markdown": "^2.2.4",
     "vuetify": "1.5.5",
     "vuex": "^3.4.0"
   }
