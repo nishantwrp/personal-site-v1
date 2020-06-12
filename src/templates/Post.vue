@@ -22,7 +22,7 @@
             <vue-markdown :source="postContent.content" />
           </v-flex>
           <v-flex xl3 lg3 md12 sm12 xs12>
-            <SideBlock :displayTitle="false">
+            <SideBlock :displayTitle="false" v-if="postContent.links.length">
               <SideLink
                 v-for="externalLink in postContent.links"
                 :key="externalLink.link"
