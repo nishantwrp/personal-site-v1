@@ -42,6 +42,9 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <v-container>
+        <Gitalk :config="gitalkConfig"/>
+      </v-container>
     </v-container>
   </Layout>
 </template>
@@ -49,6 +52,7 @@
 <page-query>
 query ($id: ID!) {
   post: contentfulPost(id: $id) {
+    gitalkId
     title
     date: date(format: "DD MMM, YYYY")
     tags {
@@ -102,6 +106,11 @@ export default {
   computed: {
     postContent() {
       return this.$page.post;
+    },
+    gitalkConfig() {
+      return {
+        id: this.postContent.gitalkId
+      }
     }
   },
   mounted() {

@@ -33,6 +33,17 @@ module.exports = {
         environment: 'master',
         typeName: 'Contentful'
       }
+    },
+    {
+      use:  'gridsome-plugin-gitalk',
+      options: {
+        clientID: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        repo: 'nishantwrp-website',
+        owner: 'nishantwrp',
+        admin: ['nishantwrp'],
+        distractionFreeMode: true
+      }
     }
   ],
   templates: {
