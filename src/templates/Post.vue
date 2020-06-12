@@ -18,10 +18,10 @@
           </v-flex>
         </v-layout>
         <v-layout row wrap>
-          <v-flex xl10 lg10 md10 sm12 xs12>
+          <v-flex xl9 lg9 md12 sm12 xs12>
             <vue-markdown :source="postContent.content" />
           </v-flex>
-          <v-flex xl2 l2 md2 sm12 xs12>
+          <v-flex xl3 lg3 md12 sm12 xs12>
             <SideBlock :displayTitle="false">
               <SideLink
                 v-for="externalLink in postContent.links"
