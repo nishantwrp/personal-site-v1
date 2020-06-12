@@ -25,6 +25,10 @@ const headLinks = [
   },
   {
     rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap'
+  },
+  {
+    rel: 'stylesheet',
     href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
   }
 ]

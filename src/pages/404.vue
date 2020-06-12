@@ -12,7 +12,7 @@
       <v-divider></v-divider>
 
       <v-container style="text-align:center">
-        <h2 :class="$style.text">Oops! We Can't Seem To Find The Page You're Looking For</h2>
+        <h2 :class="$style.text">Oops! Seems that the page you were looking for is not present.</h2>
       </v-container>
     </v-container>
   </Layout>
