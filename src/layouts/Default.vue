@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="$style.fullPage" v-show="!$store.getters.isCodeforcesLoaded">
+    <div :class="$style.fullPage" v-show="!loaded">
       <table :class="$style.loadingDiv">
         <tr :class="$style.loadingDiv">
           <td>
@@ -9,7 +9,7 @@
         </tr>
       </table>
     </div>
-    <v-app v-show="$store.getters.isCodeforcesLoaded">
+    <v-app v-show="loaded">
       <NavBar :scrolled="scrollfun" />
       <slot />
       <Footer />
@@ -40,9 +40,12 @@ export default {
   data() {
     return {
       haveScrolled: false,
+      loaded: false
     };
   },
   mounted: function() {
+    this.loaded = true;
+
     document.addEventListener(
       "scroll",
       function() {
@@ -53,8 +56,6 @@ export default {
         }
       }.bind(this)
     );
-
-    this.$store.dispatch('get_codeforces_data', { vm: this });
   },
   computed: {
     scrollfun() {

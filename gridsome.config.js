@@ -8,6 +8,7 @@ function slug(title) {
 
 module.exports = {
   siteName: 'Nishant Mittal',
+  siteUrl: 'https://www.nishantwrp.com',
   plugins: [
     {
       use: '@gridsome/plugin-google-analytics',
@@ -44,6 +45,12 @@ module.exports = {
         admin: ['nishantwrp'],
         distractionFreeMode: true
       }
+    },
+    {
+      use: '@gridsome/plugin-sitemap'
+    },
+    {
+      use: 'gridsome-plugin-robots'
     }
   ],
   templates: {

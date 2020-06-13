@@ -7,11 +7,6 @@ import Vuetify from 'vuetify';
 import colors from 'vuetify/es5/util/colors';
 import 'vuetify/dist/vuetify.min.css';
 
-import Vuex from 'vuex';
-import codeforces from './store/codeforces';
-
-import VueCookies from 'vue-cookies'
-
 import VueMarkdown from 'vue-markdown';
 
 const headLinks = [
@@ -57,16 +52,6 @@ export default function (Vue, { appOptions, router, head, isClient }) {
     iconfont: "fa"
   });
   // appOptions.vuetify = new Vuetify(vuetifyOpts);
-
-  // Vuex
-  Vue.use(Vuex);
-  appOptions.store = new Vuex.Store({
-    modules: {
-      codeforces
-    }
-  });
-
-  Vue.use(VueCookies);
 
   // Markdown Parser
   Vue.component('vue-markdown', VueMarkdown);
