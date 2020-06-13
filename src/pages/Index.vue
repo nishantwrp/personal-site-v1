@@ -26,104 +26,40 @@
         </v-layout>
       </v-container>
       <v-container>
-        <v-layout row text-xs-center wrap>
-          <v-flex xs12 sm12 md4 lg4 xl4 style="padding:5px;">
-            <v-card>
-              <v-img
-                src="https://miro.medium.com/max/782/1*CfoaTsTqWZ4RkBTAdfAE6g.jpeg"
-                aspect-ratio="2.75"
-                height="200px"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0" style="text-align:left">Competitive Programming</h3>
-                  <div>
-                    <ul style="text-align:left">
-                      <li>
-                        An Expert Level programmer on
-                        <a
-                          :href="$store.getters.codeforces.profileUrl"
-                          target="_blank"
-                        >Codeforces</a>
-                        <span
-                          v-if="$store.getters.codeforces.maxRating != 'Error'"
-                        >(Max Rating - {{ $store.getters.codeforces.maxRating }})</span>
-                      </li>
-                      <li>A Division 1 programmer on Codechef</li>
-                    </ul>
-                  </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <a href="https://www.stopstalk.com/user/profile/nishantwrp" target="_blank">
-                  <v-btn flat color="secondary">View Profile</v-btn>
-                </a>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-
-          <v-flex xs12 sm12 md4 lg4 xl4 style="padding:5px;">
-            <v-card>
-              <v-img
-                src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png"
-                aspect-ratio="2.75"
-                height="200px"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0" style="text-align:left">Web Development</h3>
-                  <div>
-                    <ul style="text-align:left">
-                      <li>
-                        <a
-                          href="https://summerofcode.withgoogle.com/projects/#4778102950985728"
-                        >GSoC'20 with Oppia</a>
-                      </li>
-                      <li>An active open source contributor</li>
-                      <li>Secured 1st position in Microsoft Codefundo++ 2k19 in the institute</li>
-                      <li>Secured 3rd position in Microsoft Codefundo++ 2k18 in the institute</li>
-                    </ul>
-                  </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <a href="https://www.github.com/nishantwrp" target="_blank">
-                  <v-btn flat color="secondary">View Profile</v-btn>
-                </a>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm12 md4 lg4 xl4 style="padding:5px;">
-            <v-card>
-              <v-img
-                src="https://hackernoon.com/drafts/e11c20yk.png"
-                aspect-ratio="2.75"
-                height="200px"
-              ></v-img>
-
-              <v-card-title primary-title>
-                <div>
-                  <h3 class="headline mb-0" style="text-align:left">Machine Learning</h3>
-                  <div>
-                    <ul style="text-align:left">
-                      <li>Secured 1st position in Technex ML Ware 2k18 in the institute</li>
-                    </ul>
-                  </div>
-                </div>
-              </v-card-title>
-
-              <v-card-actions>
-                <a href="https://www.kaggle.com/nishantwrp" target="_blank">
-                  <v-btn flat color="secondary">View Profile</v-btn>
-                </a>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
+        <h2 style="text-align: center !important;" :class="$style.text">Latest Posts</h2>
+        <v-container fluid grid-list-md>
+          <v-layout row wrap>
+            <v-flex v-for="post in postsContent" :key="post.node.title">
+              <router-link :to="postUrl(post.node.title)">
+                <v-card>
+                  <v-img :src="post.node.coverImage.file.url" contain="false" height="200px"></v-img>
+                  <v-card-title primary-title>
+                    <div>
+                      <h3 class="headline mb-0">{{ post.node.title }}</h3>
+                      <div>{{ post.node.shortDescription }}</div>
+                      <div>
+                        <router-link
+                          v-for="tag in post.node.tags"
+                          :key="tag.title"
+                          :to="tagUrl(tag.title)"
+                        >
+                          <v-chip outline color="primary">
+                            <span style="cursor: pointer;">{{ tag.title }}</span>
+                          </v-chip>
+                        </router-link>
+                      </div>
+                    </div>
+                  </v-card-title>
+                </v-card>
+              </router-link>
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <v-container style="text-align: center !important">
+          <router-link to="/categories/">
+            <v-btn outline color="primary">Show All</v-btn>
+          </router-link>
+        </v-container>
       </v-container>
     </v-container>
   </Layout>
@@ -139,10 +75,29 @@ query {
       }
     }
   }
+
+  posts: allContentfulPost(limit: 3){
+    edges {
+      node {
+        title
+        tags {
+          title
+        }
+        shortDescription
+        coverImage {
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
+import { slug } from "../js/slugify";
+
 export default {
   metaInfo: {
     title: "Home"
@@ -159,6 +114,17 @@ export default {
   computed: {
     introContent() {
       return this.$page.allContentfulIntro.edges[0].node;
+    },
+    postsContent() {
+      return this.$page.posts.edges;
+    }
+  },
+  methods: {
+    tagUrl(title) {
+      return "/categories/" + slug(title) + "/";
+    },
+    postUrl(title) {
+      return "/posts/" + slug(title) + "/";
     }
   }
 };

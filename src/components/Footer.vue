@@ -30,8 +30,8 @@ export default {
         link: "https://www.linkedin.com/in/nishantwrp/"
       },
       {
-        icon: "fab fa-instagram",
-        link: "https://www.instagram.com/nishantwrp/"
+        icon: "fab fa-twitter",
+        link: "https://twitter.com/nishantwrp"
       },
       { icon: "fab fa-github", link: "https://www.github.com/nishantwrp" },
       { icon: "fas fa-envelope", link: "mailto:admin@nishantwrp.com" }

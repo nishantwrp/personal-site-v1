@@ -27,7 +27,9 @@
                         :key="tag.title"
                         :to="tagUrl(tag.title)"
                       >
-                        <v-chip outline color="primary"><span style="cursor: pointer;">{{ tag.title }}</span></v-chip>
+                        <v-chip outline color="primary">
+                          <span style="cursor: pointer;">{{ tag.title }}</span>
+                        </v-chip>
                       </router-link>
                     </div>
                   </div>
@@ -37,6 +39,7 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <v-container :class="$style.noPosts" v-if="!postsContent.length">No posts in this category yet.</v-container>
     </v-container>
   </Layout>
 </template>
@@ -132,6 +135,13 @@ export default {
 
 .text {
   color: #3f51b5;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+.noPosts {
+  text-align: center;
+  color: #3f51b5;
+  font-size: 20px;
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 </style>
