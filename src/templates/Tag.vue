@@ -16,7 +16,12 @@
           <v-flex v-for="post in postsContent" :key="post.node.title">
             <router-link :to="postUrl(post.node.title)">
               <v-card>
-                <v-img :src="post.node.coverImage.file.url" contain="false" height="200px"></v-img>
+                <v-img
+                  :alt="post.node.coverImage.title"
+                  :src="post.node.coverImage.file.url"
+                  contain="false"
+                  height="200px"
+                ></v-img>
                 <v-card-title primary-title>
                   <div>
                     <h3 class="headline mb-0">{{ post.node.title }}</h3>
@@ -39,7 +44,10 @@
           </v-flex>
         </v-layout>
       </v-container>
-      <v-container :class="$style.noPosts" v-if="!postsContent.length">No posts in this category yet.</v-container>
+      <v-container
+        :class="$style.noPosts"
+        v-if="!postsContent.length"
+      >No posts in this category yet.</v-container>
     </v-container>
   </Layout>
 </template>
@@ -60,6 +68,7 @@ query ($id: ID!) {
         }
         shortDescription
         coverImage {
+          title
           file {
             url
           }
@@ -76,7 +85,13 @@ import { slug } from "../js/slugify";
 export default {
   metaInfo() {
     return {
-      title: this.$page.tag.title
+      title: this.$page.tag.title,
+      meta: [
+        {
+          name: "description",
+          content: this.$page.tag.description
+        }
+      ]
     };
   },
   data: () => ({

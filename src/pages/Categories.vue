@@ -15,7 +15,12 @@
           <v-flex v-for="tag in tagsContent" :key="tag.node.title">
             <router-link :to="tagUrl(tag.node.title)">
               <v-card>
-                <v-img contain="false" :src="tag.node.coverImage.file.url" height="200px"></v-img>
+                <v-img
+                  :alt="tag.node.coverImage.title"
+                  contain="false"
+                  :src="tag.node.coverImage.file.url"
+                  height="200px"
+                ></v-img>
                 <v-card-title primary-title>
                   <div>
                     <h3 class="headline mb-0">{{ tag.node.title }}</h3>
@@ -39,6 +44,7 @@ query {
         title
         description
         coverImage {
+          title
           file {
             url
           }
@@ -50,11 +56,17 @@ query {
 </page-query>
 
 <script>
-import { slug } from '../js/slugify';
+import { slug } from "../js/slugify";
 
 export default {
   metaInfo: {
-    title: "Categories"
+    title: "Categories",
+    meta: [
+      {
+        name: "description",
+        content: "Various topics based on my blog posts and projects."
+      }
+    ]
   },
   data: () => ({
     items: [
@@ -77,7 +89,7 @@ export default {
   },
   methods: {
     tagUrl(title) {
-      return '/categories/' + slug(title) + '/';
+      return "/categories/" + slug(title) + "/";
     }
   }
 };

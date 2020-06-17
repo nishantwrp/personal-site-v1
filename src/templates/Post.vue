@@ -14,7 +14,12 @@
       <v-container>
         <v-layout row wrap>
           <v-flex xl12>
-            <v-img :src="postContent.coverImage.file.url" contain="false" height="300px"></v-img>
+            <v-img
+              :alt="postContent.coverImage.title"
+              :src="postContent.coverImage.file.url"
+              contain="false"
+              height="300px"
+            ></v-img>
           </v-flex>
         </v-layout>
         <v-layout row wrap>
@@ -43,7 +48,7 @@
         </v-layout>
       </v-container>
       <v-container>
-        <Gitalk :config="gitalkConfig"/>
+        <Gitalk :config="gitalkConfig" />
       </v-container>
     </v-container>
   </Layout>
@@ -59,7 +64,11 @@ query ($id: ID!) {
         title
     }
     shortDescription
+    hasCanonicalUrl
+    canonicalUrl
+    metaTags
     coverImage {
+        title
         file {
             url
         }
@@ -71,7 +80,12 @@ query ($id: ID!) {
         link
         title
     }
-    }
+  }
+
+  metadata {
+    siteUrl
+    siteName
+  }
 }
 </page-query>
 
@@ -83,7 +97,47 @@ import SideLink from "../components/SideLink";
 export default {
   metaInfo() {
     return {
-      title: this.$page.post.title
+      title: this.$page.post.title,
+      meta: [
+        {
+          name: "author",
+          content: "Nishant Mittal"
+        },
+        {
+          name: "description",
+          content: this.postContent.shortDescription
+        },
+        {
+          name: "keywords",
+          content: this.postContent.metaTags
+        },
+        {
+          property: "og:type",
+          content: "article"
+        },
+        {
+          property: "og:title",
+          content: this.postContent.title
+        },
+        {
+          property: "og:description",
+          content: this.postContent.shortDescription
+        },
+        {
+          property: "og:image",
+          content: this.postContent.coverImage.file.url
+        },
+        {
+          property: "og:site_name",
+          content: this.$page.metadata.siteName
+        },
+        {
+          property: "og:url",
+          content: this.$page.metadata.siteUrl + this.postUrl(
+            this.postContent.title)
+        }
+      ],
+      link: this.getLinkMeta
     };
   },
   components: {
@@ -110,7 +164,19 @@ export default {
     gitalkConfig() {
       return {
         id: this.postContent.gitalkId
+      };
+    },
+    getLinkMeta() {
+      if (this.postContent.hasCanonicalUrl) {
+        return [
+          {
+            rel: "canonical",
+            href: this.postContent.canonicalUrl
+          }
+        ]
       }
+
+      return [];
     }
   },
   mounted() {

@@ -14,7 +14,7 @@
         <v-layout row text-xs-center wrap>
           <v-flex xl4 lg4 md4 sm6 xs12>
             <v-avatar size="150px" color="grey lighten-4">
-              <img :src="introContent.photoUrl" />
+              <img alt="Nishant Mittal" :src="introContent.photoUrl" />
             </v-avatar>
           </v-flex>
           <v-flex xl8 lg8 md8 sm6 xs12 :class="$style.blackText">
@@ -32,7 +32,12 @@
             <v-flex v-for="post in postsContent" :key="post.node.title">
               <router-link :to="postUrl(post.node.title)">
                 <v-card>
-                  <v-img :src="post.node.coverImage.file.url" contain="false" height="200px"></v-img>
+                  <v-img
+                    :alt="post.node.coverImage.title"
+                    :src="post.node.coverImage.file.url"
+                    contain="false"
+                    height="200px"
+                  ></v-img>
                   <v-card-title primary-title>
                     <div>
                       <h3 class="headline mb-0">{{ post.node.title }}</h3>
@@ -85,6 +90,7 @@ query {
         }
         shortDescription
         coverImage {
+          title
           file {
             url
           }
@@ -100,7 +106,17 @@ import { slug } from "../js/slugify";
 
 export default {
   metaInfo: {
-    title: "Home"
+    title: "Home",
+    meta: [
+      {
+        name: "description",
+        content: "Nishant Mittal.This is my personal website and it contains my blog posts and the projects I have worked on."
+      },
+      {
+        name: "keywords",
+        content: "nishantwrp, portfolio, developer, web, blog, projects, nishant mittal"
+      }
+    ]
   },
   data: () => ({
     items: [
