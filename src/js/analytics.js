@@ -12,5 +12,4 @@ export function postLinkClick(vue, postTitle, linkLabel) {
     eventAction: 'Click',
     eventLabel: postTitle + " - " + linkLabel
   });
-  console.log('done');
 }

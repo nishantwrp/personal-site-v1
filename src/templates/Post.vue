@@ -31,6 +31,7 @@
               <SideLink
                 v-for="externalLink in postContent.links"
                 :key="externalLink.link"
+                :title="postContent.title"
                 :link="externalLink"
               />
             </SideBlock>

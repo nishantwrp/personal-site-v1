@@ -130,7 +130,7 @@ export default {
   methods: {
     redirectTo(link, label) {
       socialLinkClick(this, label);
-      window.location.href = link;
+      window.open(link, '_blank');
     }
   }
 };

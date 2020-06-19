@@ -22,12 +22,16 @@ export default {
     link: {
       type: Object,
       required: true
+    },
+    title: {
+      type: String,
+      required: true
     }
   },
   methods: {
     redirectTo(link, label) {
-      postLinkClick(this, document.title, label);
-      // window.location.href = link;
+      postLinkClick(this, this.title, label);
+      window.open(link, '_blank');
     }
   }
 };
