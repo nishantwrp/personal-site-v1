@@ -17,14 +17,13 @@
         <router-link v-for="page in pages" :key="page.title" :to="page.link">
           <v-btn outline color="primary">{{ page.title }}</v-btn>
         </router-link>
-        <a
+        <span
           v-for="externalLink in externalLinks"
           :key="externalLink.title"
-          :href="externalLink.link"
-          target="_blank"
+          v-on:click="redirectTo(externalLink.link, externalLink.title)"
         >
           <v-btn color="primary">{{ externalLink.title }}</v-btn>
-        </a>
+        </span>
       </div>
 
       <v-toolbar-side-icon
@@ -47,14 +46,13 @@
         <router-link v-for="page in pages" :key="page.title" :to="page.link">
           <v-btn outline color="primary">{{ page.title }}</v-btn>
         </router-link>
-        <a
+        <span
           v-for="externalLink in externalLinks"
           :key="externalLink.title"
-          :href="externalLink.link"
-          target="_blank"
+          v-on:click="redirectTo(externalLink.link, externalLink.title)"
         >
           <v-btn color="primary">{{ externalLink.title }}</v-btn>
-        </a>
+        </span>
       </div>
 
       <v-toolbar-side-icon
@@ -75,11 +73,11 @@
         </v-list-tile>
 
         <v-list-tile>
-          <a v-for="externalLink in externalLinks" :key="externalLink.title" :href="externalLink.link" target="_blank">
+          <span v-for="externalLink in externalLinks" v-on:click="redirectTo(externalLink.link, externalLink.title)" :key="externalLink.title">
             <v-list-tile-content>
               <v-list-tile-title>{{ externalLink.title }}</v-list-tile-title>
             </v-list-tile-content>
-          </a>
+          </span>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -87,7 +85,9 @@
 </template>
 
 <script>
+import { socialLinkClick } from "../js/analytics";
 import Logo from "./Logo";
+
 export default {
   components: {
     Logo
@@ -126,6 +126,12 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    redirectTo(link, label) {
+      socialLinkClick(this, label);
+      window.location.href = link;
+    }
   }
 };
 </script>
