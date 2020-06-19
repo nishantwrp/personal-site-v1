@@ -27,7 +27,7 @@ export default {
   methods: {
     redirectTo(link, label) {
       postLinkClick(this, document.title, label);
-      window.location.href = link;
+      // window.location.href = link;
     }
   }
 };
