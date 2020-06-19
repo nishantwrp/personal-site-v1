@@ -15,11 +15,10 @@
         Made with
         <span style="color: #e25555; font-size: 18px;">&#9829;</span> by
         <strong>
-          <a
-            href="https://github.com/nishantwrp/nishantwrp-website"
-            style="color: white"
-            target="_blank"
-          >nishantwrp</a>
+          <span
+            v-on:click="redirectTo('https://github.com/nishantwrp/nishantwrp-website', 'Source Code')"
+            style="color: white; cursor: pointer;"
+          >nishantwrp</span>
         </strong>
       </v-card-text>
     </v-card>
