@@ -24,7 +24,7 @@
         </v-layout>
         <v-layout row wrap>
           <v-flex xl9 lg9 md12 sm12 xs12>
-            <vue-markdown :source="postContent.content" />
+            <vue-markdown :class="$style.montserrat" :source="postContent.content" />
           </v-flex>
           <v-flex xl3 lg3 md12 sm12 xs12>
             <SideBlock :displayTitle="false" v-if="postContent.links.length">
@@ -42,7 +42,7 @@
                 </v-chip>
               </router-link>
             </SideBlock>
-            <SideBlock title="Last Updated">
+            <SideBlock title="Created On">
               <span :class="$style.montserrat">{{ postContent.date }}</span>
             </SideBlock>
           </v-flex>
