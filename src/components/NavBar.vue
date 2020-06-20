@@ -73,7 +73,12 @@
         </v-list-tile>
 
         <v-list-tile>
-          <span v-for="externalLink in externalLinks" v-on:click="redirectTo(externalLink.link, externalLink.title)" :key="externalLink.title">
+          <span
+            v-for="externalLink in externalLinks"
+            v-on:click="redirectTo(externalLink.link, externalLink.title)"
+            :key="externalLink.title"
+            style="color: #3f51b5; cursor: pointer;"
+          >
             <v-list-tile-content>
               <v-list-tile-title>{{ externalLink.title }}</v-list-tile-title>
             </v-list-tile-content>
@@ -130,7 +135,7 @@ export default {
   methods: {
     redirectTo(link, label) {
       socialLinkClick(this, label);
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     }
   }
 };
