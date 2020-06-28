@@ -13,7 +13,7 @@
       <v-divider></v-divider>
       <v-container fluid grid-list-md>
         <v-layout row wrap>
-          <v-flex v-for="post in postsContent" :key="post.node.title">
+          <v-flex v-for="post in postsContent" :key="post.node.title" xs12 sm12 md6 lg6 xl6>
             <router-link :to="postUrl(post.node.title)">
               <v-card>
                 <v-img

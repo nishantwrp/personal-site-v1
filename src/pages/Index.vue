@@ -29,7 +29,7 @@
         <h2 style="text-align: center !important;" :class="$style.text">Latest Posts</h2>
         <v-container fluid grid-list-md>
           <v-layout row wrap>
-            <v-flex v-for="post in postsContent" :key="post.node.title">
+            <v-flex v-for="post in postsContent" :key="post.node.title" xs12 sm12 md12 lg4 xl4>
               <router-link :to="postUrl(post.node.title)">
                 <v-card>
                   <v-img
@@ -110,11 +110,13 @@ export default {
     meta: [
       {
         name: "description",
-        content: "Nishant Mittal.This is my personal website and it contains my blog posts and the projects I have worked on."
+        content:
+          "Nishant Mittal.This is my personal website and it contains my blog posts and the projects I have worked on."
       },
       {
         name: "keywords",
-        content: "nishantwrp, portfolio, developer, web, blog, projects, nishant mittal"
+        content:
+          "nishantwrp, portfolio, developer, web, blog, projects, nishant mittal"
       }
     ]
   },

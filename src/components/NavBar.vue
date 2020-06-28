@@ -108,10 +108,6 @@ export default {
       drawer: null,
       pages: [
         {
-          title: "Home",
-          link: "/"
-        },
-        {
           title: "Categories",
           link: "/categories/"
         },

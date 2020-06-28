@@ -12,7 +12,7 @@
       <v-divider></v-divider>
       <v-container fluid grid-list-md>
         <v-layout row wrap>
-          <v-flex v-for="tag in tagsContent" :key="tag.node.title">
+          <v-flex v-for="tag in tagsContent" :key="tag.node.title" xs12 sm12 md4 lg3 xl2>
             <router-link :to="tagUrl(tag.node.title)">
               <v-card>
                 <v-img
