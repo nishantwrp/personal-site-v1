@@ -13,22 +13,7 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex v-for="tag in tagsContent" :key="tag.node.title" xs12 sm12 md4 lg3 xl2>
-            <router-link :to="tagUrl(tag.node.title)">
-              <v-card>
-                <v-img
-                  :alt="tag.node.coverImage.title"
-                  contain="false"
-                  :src="tag.node.coverImage.file.url"
-                  height="200px"
-                ></v-img>
-                <v-card-title primary-title>
-                  <div>
-                    <h3 class="headline mb-0">{{ tag.node.title }}</h3>
-                    <div>{{ tag.node.description }}</div>
-                  </div>
-                </v-card-title>
-              </v-card>
-            </router-link>
+            <TagCard :tag="tag.node" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -56,7 +41,7 @@ query {
 </page-query>
 
 <script>
-import { slug } from "../js/slugify";
+import TagCard from '../components/TagCard';
 
 export default {
   metaInfo: {
@@ -87,10 +72,8 @@ export default {
       return this.$page.allContentfulTag.edges;
     }
   },
-  methods: {
-    tagUrl(title) {
-      return "/categories/" + slug(title) + "/";
-    }
+  components: {
+    TagCard
   }
 };
 </script>

@@ -14,33 +14,7 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex v-for="post in postsContent" :key="post.node.title" xs12 sm12 md6 lg6 xl6>
-            <router-link :to="postUrl(post.node.title)">
-              <v-card>
-                <v-img
-                  :alt="post.node.coverImage.title"
-                  :src="post.node.coverImage.file.url"
-                  contain="false"
-                  height="200px"
-                ></v-img>
-                <v-card-title primary-title>
-                  <div>
-                    <h3 class="headline mb-0">{{ post.node.title }}</h3>
-                    <div>{{ post.node.shortDescription }}</div>
-                    <div>
-                      <router-link
-                        v-for="tag in post.node.tags"
-                        :key="tag.title"
-                        :to="tagUrl(tag.title)"
-                      >
-                        <v-chip outline color="primary">
-                          <span style="cursor: pointer;">{{ tag.title }}</span>
-                        </v-chip>
-                      </router-link>
-                    </div>
-                  </div>
-                </v-card-title>
-              </v-card>
-            </router-link>
+            <PostCard :post="post.node" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -81,6 +55,7 @@ query ($id: ID!) {
 
 <script>
 import { slug } from "../js/slugify";
+import PostCard from "../components/PostCard";
 
 export default {
   metaInfo() {
@@ -129,9 +104,6 @@ export default {
     tagUrl(title) {
       return "/categories/" + slug(title) + "/";
     },
-    postUrl(title) {
-      return "/posts/" + slug(title) + "/";
-    },
     createBreadcrumb() {
       this.items.push({
         text: this.tagContent.title,
@@ -139,6 +111,9 @@ export default {
         href: this.tagUrl(this.tagContent.title)
       });
     }
+  },
+  components: {
+    PostCard
   }
 };
 </script>
