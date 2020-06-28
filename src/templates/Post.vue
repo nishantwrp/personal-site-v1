@@ -214,4 +214,8 @@ export default {
   color: #3f51b5;
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
+
+p {
+  overflow-wrap: break-word;
+}
 </style>
