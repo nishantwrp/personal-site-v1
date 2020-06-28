@@ -49,9 +49,4 @@ export default {
 .postCard {
   height: 100%;
 }
-
-.postTags {
-  position: absolute;
-  bottom: 16px;
-}
 </style>
