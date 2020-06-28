@@ -1,17 +1,11 @@
-# Default starter for Gridsome
+# nishantwrp-website
+This is the source code for my website which is live at [nishantwrp.com](https://www.nishantwrp.com/)
 
-This is the project you get when you run `gridsome create new-project`.
+## Technologies Used
+- [Gridsome](https://gridsome.org/) - I have used gridsome to generate a static site for the site to be SEO Friendly.
+- [Contentful](https://www.contentful.com/) - I have used Contentful as the CMS for this site.
+- [Vue Js](https://vuejs.org/) - Well this is obvious by the fact that I'm using Gridsome.
+- [Vuetify](https://vuetifyjs.com/) - I have used Vuetify as the UI framework.
 
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
-
-### 3. Netlify
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a5820ade-aecc-4010-beec-a089825c2153/deploy-status)](https://app.netlify.com/sites/nishantwrp-develop/deploys)
+## Something wrong in the site?
+Feel free to create an issue if you feel that something needs to be changed or if you find some bug in the site.
