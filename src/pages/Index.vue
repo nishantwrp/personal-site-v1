@@ -12,16 +12,13 @@
       <v-divider></v-divider>
       <v-container>
         <v-layout row text-xs-center wrap>
-          <v-flex xl4 lg4 md4 sm6 xs12>
+          <v-flex xl4 lg4 md12 sm12 xs12>
             <v-avatar size="150px" color="grey lighten-4">
               <img alt="Nishant Mittal" :src="introContent.photoUrl" />
             </v-avatar>
           </v-flex>
-          <v-flex xl8 lg8 md8 sm6 xs12 :class="$style.blackText">
-            <p
-              v-for="paraContent in introContent.content.content"
-              :key="paraContent.content.value"
-            >{{ paraContent.content[0].value }}</p>
+          <v-flex xl8 lg8 md12 sm12 xs12 :class="$style.blackText">
+            <vue-markdown :source="introContent.bio" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -50,7 +47,7 @@ query {
     edges {
       node {
         photoUrl
-        content
+        bio
       }
     }
   }
