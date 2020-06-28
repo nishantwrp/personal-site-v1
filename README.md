@@ -9,3 +9,6 @@ This is the source code for my website which is live at [nishantwrp.com](https:/
 
 ## Something wrong in the site?
 Feel free to create an issue if you feel that something needs to be changed or if you find some bug in the site.
+
+## Deployment
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a5820ade-aecc-4010-beec-a089825c2153/deploy-status)](https://app.netlify.com/sites/nishantwrp-develop/deploys)
