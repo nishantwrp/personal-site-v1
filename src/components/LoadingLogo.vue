@@ -1,45 +1,13 @@
 <template>
-  <div>
-    <span :class="[$style.logotext,$style.noselect]" :style="logostyle">
+    <span :class="[$style.logotext,$style.noselect]">
       <div :class="$style.loadingdiv">NM</div>
     </span>
-  </div>
 </template>
-<script>
-export default {
-  props: {
-    logosize: {
-      type: Number,
-      default: 50
-    },
-    logocolor: {
-      type: String,
-      default: "black"
-    }
-  },
-  computed: {
-    logostyle() {
-      return (
-        "font-size:" +
-        this.logosize +
-        "px;color:" +
-        this.logocolor +
-        ";border:" +
-        this.logosize / 25 +
-        "px solid " +
-        this.logocolor +
-        ";padding:" +
-        this.logosize / 5 +
-        "px;"
-      );
-    }
-  }
-};
-</script>
+
 <style module lang="css">
 @font-face {
   font-family: "New Walt Disney";
-  src: url("../assets/fonts/New Walt Disney.ttf") format("truetype");
+  src: url("/fonts/New Walt Disney.ttf") format("truetype");
 }
 @keyframes spin {
   0% {
@@ -52,6 +20,10 @@ export default {
 .logotext {
   font-family: "New Walt Disney";
   border-radius: 50%;
+  font-size: 50px;
+  color: #3f51b5;
+  border: 2px solid #3f51b5 ;
+  padding: 10px;
 }
 .loadingdiv {
   display: inline-block;

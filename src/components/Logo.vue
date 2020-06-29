@@ -12,6 +12,7 @@
     >NM</span>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -26,28 +27,16 @@ export default {
   },
   computed: {
     logostyle() {
-      return (
-        // "font-size:" +
-        // this.logosize +
-        // "px;color:" +
-        // this.logocolor +
-        // ";border:" +
-        // this.logosize / 25 +
-        // "px solid " +
-        // this.logocolor +
-        // ";padding:" +
-        // this.logosize / 5 +
-        // "px;"
-        "font-size:" + this.logosize + "px;color:" + this.logocolor + ";"
-      );
+      return "font-size:" + this.logosize + "px;color:" + this.logocolor + ";";
     }
   }
 };
 </script>
+
 <style module lang="css">
 @font-face {
   font-family: "New Walt Disney";
-  src: url("../assets/fonts/New Walt Disney.ttf") format("truetype");
+  src: url("/fonts/New Walt Disney.ttf") format("truetype");
 }
 
 .logotext {
