@@ -12,19 +12,11 @@ import VueMarkdown from 'vue-markdown';
 const headLinks = [
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'
+    href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Montserrat:400,700,200|Balsamiq+Sans'
   },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700,200'
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap'
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css'
+    href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css'
   }
 ]
 
