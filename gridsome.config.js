@@ -51,6 +51,13 @@ module.exports = {
     },
     {
       use: 'gridsome-plugin-robots'
+    },
+    {
+      use: "gridsome-plugin-monetization",
+      options: {
+        paymentPointer: "$ilp.uphold.com/GWLyAddY39LY",
+        global: true
+      },
     }
   ],
   templates: {

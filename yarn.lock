@@ -4646,6 +4646,11 @@ gridsome-plugin-gitalk@^0.1.0:
   dependencies:
     vue-gitalk "^0.2.0"
 
+gridsome-plugin-monetization@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-monetization/-/gridsome-plugin-monetization-1.0.1.tgz#efaf8e8ce8319e3b2cffadc4968dc249756acb15"
+  integrity sha512-gkiY3CBjM8nTBIfH3g+ith8kZrJi50kxFP9GHJU3PZpW3QzxKBgBr4+kOhS0NIx74tCdIv0Fw4KTfe9MKycH+A==
+
 gridsome-plugin-pwa@^0.0.17:
   version "0.0.17"
   resolved "https://registry.yarnpkg.com/gridsome-plugin-pwa/-/gridsome-plugin-pwa-0.0.17.tgz#f7eb9a4d06e07bf2f4d368898188f9a726ba3849"
