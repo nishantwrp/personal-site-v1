@@ -1,15 +1,6 @@
 <template>
   <div>
-    <div :class="$style.fullPage" v-show="!loaded">
-      <table :class="$style.loadingDiv">
-        <tr :class="$style.loadingDiv">
-          <td>
-            <LoadingLogo />
-          </td>
-        </tr>
-      </table>
-    </div>
-    <v-app v-show="loaded">
+    <v-app>
       <NavBar :scrolled="scrollfun" />
       <slot />
       <Footer />
@@ -26,7 +17,6 @@ query {
 </static-query>
 
 <script>
-import LoadingLogo from "../components/LoadingLogo";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -34,18 +24,14 @@ export default {
   name: "App",
   components: {
     NavBar,
-    Footer,
-    LoadingLogo
+    Footer
   },
   data() {
     return {
-      haveScrolled: false,
-      loaded: false
+      haveScrolled: false
     };
   },
   mounted: function() {
-    this.loaded = true;
-
     document.addEventListener(
       "scroll",
       function() {
