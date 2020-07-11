@@ -42,7 +42,7 @@
                 </v-chip>
               </router-link>
             </SideBlock>
-            <SideBlock title="Created On">
+            <SideBlock title="Written On">
               <span :class="$style.montserrat">{{ postContent.date }}</span>
             </SideBlock>
           </v-flex>
