@@ -91,6 +91,8 @@
 
 <script>
 import { socialLinkClick } from "../js/analytics";
+import { RESUME_URL } from "../constants";
+
 import Logo from "./Logo";
 
 export default {
@@ -123,7 +125,7 @@ export default {
       externalLinks: [
         {
           title: "Resume",
-          link: "https://github.com/nishantwrp/my-cv/raw/master/nishantwrp.pdf"
+          link: RESUME_URL
         }
       ]
     };

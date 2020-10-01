@@ -12,8 +12,12 @@
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        Made with
-        <span style="color: #e25555; font-size: 18px;">&#9829;</span> by
+        <v-icon size="18px">fas fa-code</v-icon>
+        with
+        <v-icon size="18px">fas fa-heart</v-icon>
+        and
+        <v-icon size="18px">fas fa-coffee</v-icon>
+        by
         <strong>
           <span
             v-on:click="redirectTo('https://github.com/nishantwrp/nishantwrp-website', 'Source Code')"
@@ -27,6 +31,7 @@
 
 <script>
 import { socialLinkClick } from "../js/analytics";
+import { FACEBOOK_URL, LINKEDIN_URL, TWITTER_URL, GITHUB_URL, EMAIL } from "../constants";
 
 export default {
   data: () => ({
@@ -34,27 +39,27 @@ export default {
       {
         label: "Facebook",
         icon: "fab fa-facebook",
-        link: "https://www.facebook.com/nishantwrp"
+        link: FACEBOOK_URL
       },
       {
         label: "Linkedin",
         icon: "fab fa-linkedin",
-        link: "https://www.linkedin.com/in/nishantwrp/"
+        link: LINKEDIN_URL
       },
       {
         label: "Twitter",
         icon: "fab fa-twitter",
-        link: "https://twitter.com/nishantwrp"
+        link: TWITTER_URL
       },
       {
         label: "Github",
         icon: "fab fa-github",
-        link: "https://www.github.com/nishantwrp"
+        link: GITHUB_URL
       },
       {
         label: "Mail",
         icon: "fas fa-envelope",
-        link: "mailto:admin@nishantwrp.com"
+        link: "mailto:" + EMAIL
       }
     ]
   }),
