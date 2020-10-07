@@ -3,3 +3,12 @@
 div .gt-meta {
     z-index: 0 !important;
 }
+
+/* Overriding Vuetify CSS for syntax highlighting */
+code {
+    box-shadow: none !important;
+}
+
+code::before, code::after {
+    content: none !important;
+}

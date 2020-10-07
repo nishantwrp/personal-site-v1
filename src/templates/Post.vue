@@ -24,7 +24,7 @@
         </v-layout>
         <v-layout row wrap>
           <v-flex xl9 lg9 md12 sm12 xs12>
-            <vue-markdown :class="$style.montserrat" :source="postContent.content" />
+            <vue-markdown :class="[$style.montserrat, $style.postContent]" :source="postContent.content" />
           </v-flex>
           <v-flex xl3 lg3 md12 sm12 xs12>
             <SideBlock :displayTitle="false" v-if="postContent.links.length">
@@ -208,6 +208,11 @@ export default {
 
 .montserrat {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+.postContent img {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 .text {

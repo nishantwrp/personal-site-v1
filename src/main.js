@@ -20,7 +20,18 @@ const headLinks = [
   },
   {
     rel: 'stylesheet',
+    href: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css'
+  },
+  {
+    rel: 'stylesheet',
     href: '/style.css'
+  }
+]
+
+const headScripts = [
+  {
+    src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js',
+    body: false
   }
 ]
 
@@ -30,15 +41,12 @@ export default function (Vue, { appOptions, router, head, isClient }) {
     head.link.push(headLink);
   }
 
-  // Vuetify Config
-  const vuetifyOpts = {
-    theme: {
-      primary: colors.indigo.base,
-      secondary: colors.indigo.darken3,
-      accent: colors.indigo.accent4
-    },
-    iconfont: "fa"
+  // Scripts in <head> or <body> tag
+  for (let headScript of headScripts) {
+    head.script.push(headScript);
   }
+
+  // Vuetify Config
   Vue.use(Vuetify, {
     theme: {
       primary: colors.indigo.base,
@@ -47,7 +55,6 @@ export default function (Vue, { appOptions, router, head, isClient }) {
     },
     iconfont: "fa"
   });
-  // appOptions.vuetify = new Vuetify(vuetifyOpts);
 
   // Markdown Parser
   Vue.component('vue-markdown', VueMarkdown);
