@@ -20,7 +20,7 @@ const headLinks = [
   },
   {
     rel: 'stylesheet',
-    href: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css'
+    href: '/prism/prism.css'
   },
   {
     rel: 'stylesheet',
@@ -30,7 +30,7 @@ const headLinks = [
 
 const headScripts = [
   {
-    src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js',
+    src: '/prism/prism.js',
     body: false
   }
 ]

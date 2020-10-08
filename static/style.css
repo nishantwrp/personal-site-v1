@@ -7,6 +7,7 @@ div .gt-meta {
 /* Overriding Vuetify CSS for syntax highlighting */
 code {
     box-shadow: none !important;
+    font-weight: normal !important;
 }
 
 code::before, code::after {
