@@ -136,6 +136,30 @@ export default {
           property: "og:url",
           content: this.$page.metadata.siteUrl + this.postUrl(
             this.postContent.title)
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          name: "twitter:title",
+          content: this.postContent.title
+        },
+        {
+          name: "twitter:description",
+          content: this.postContent.shortDescription
+        },
+        {
+          name: "twitter:creator",
+          content: "@nishantwrp"
+        },
+        {
+          name: "twitter:site",
+          content: "@nishantwrp"
+        },
+        {
+          name: "twitter:image",
+          content: this.postContent.coverImage.file.url
         }
       ],
       link: this.getLinkMeta
