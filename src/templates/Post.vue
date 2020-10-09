@@ -188,6 +188,7 @@ export default {
     },
     gitalkConfig() {
       return {
+        title: this.postContent.title,
         id: this.postContent.gitalkId
       };
     },
