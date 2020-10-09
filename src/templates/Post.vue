@@ -159,7 +159,7 @@ export default {
         },
         {
           name: "twitter:image",
-          content: "https:" + this.postContent.coverImage.file.url
+          content: "htts:" + this.postContent.coverImage.file.url
         }
       ],
       link: this.getLinkMeta
