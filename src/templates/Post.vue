@@ -206,6 +206,9 @@ export default {
   },
   mounted() {
     this.createBreadcrumb();
+    // This statement triggers the syntax highlighter because it doesn't
+    // get triggered automatically sometimes.
+    Prism.highlightAll();
   },
   methods: {
     tagUrl(title) {
