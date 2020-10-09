@@ -126,7 +126,7 @@ export default {
         },
         {
           property: "og:image",
-          content: this.postContent.coverImage.file.url
+          content: "https:" + this.postContent.coverImage.file.url
         },
         {
           property: "og:site_name",
@@ -159,7 +159,7 @@ export default {
         },
         {
           name: "twitter:image",
-          content: this.postContent.coverImage.file.url
+          content: "https:" + this.postContent.coverImage.file.url
         }
       ],
       link: this.getLinkMeta
