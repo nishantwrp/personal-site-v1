@@ -154,7 +154,7 @@ export default {
           content: "@nishantwrp"
         },
         {
-          name: "twitter:site",
+          name: "twitte r:site",
           content: "@nishantwrp"
         },
         {
