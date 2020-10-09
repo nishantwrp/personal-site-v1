@@ -31,7 +31,7 @@ const headLinks = [
 const headScripts = [
   {
     src: '/prism/prism.js',
-    body: false
+    body: true
   }
 ]
 
