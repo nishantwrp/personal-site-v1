@@ -23,16 +23,16 @@
         </v-layout>
       </v-container>
       <v-container>
-        <h2 style="text-align: center !important;" :class="$style.text">Latest Posts</h2>
+        <h2 style="text-align: center !important;" :class="$style.text">Latest Blog Posts</h2>
         <v-container fluid grid-list-md>
           <v-layout row wrap>
-            <v-flex v-for="post in postsContent" :key="post.node.title" xs12 sm12 md12 lg4 xl4>
-              <PostCard :post="post.node" />
+            <v-flex v-for="post in blogPosts" :key="post.title" xs12 sm12 md12 lg4 xl4>
+              <PostCard :post="post" />
             </v-flex>
           </v-layout>
         </v-container>
         <v-container style="text-align: center !important">
-          <router-link to="/categories/">
+          <router-link to="/categories/blog/">
             <v-btn outline color="primary">Show All</v-btn>
           </router-link>
         </v-container>
@@ -52,7 +52,7 @@ query {
     }
   }
 
-  posts: allContentfulPost(limit: 3){
+  posts: allContentfulPost {
     edges {
       node {
         title
@@ -104,8 +104,24 @@ export default {
     introContent() {
       return this.$page.allContentfulIntro.edges[0].node;
     },
-    postsContent() {
-      return this.$page.posts.edges;
+    blogPosts() {
+      const allPosts = this.$page.posts.edges;
+      let blogPosts = [];
+
+      for (const { node } of allPosts) {
+        const tags = node.tags.map(tag => tag.title);
+        console.log(tags);
+        if (tags.includes('Blog')) {
+          blogPosts.push(node);
+
+          // A maximum of three posts.
+          if (blogPosts.length === 3) {
+            break;
+          }
+        }
+      }
+
+      return blogPosts;
     }
   },
   components: {
