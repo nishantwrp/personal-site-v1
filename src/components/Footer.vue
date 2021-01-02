@@ -2,7 +2,11 @@
   <v-footer dark height="auto">
     <v-card flat tile class="indigo flex lighten-1 white--text text-xs-center">
       <v-card-text>
-        <span v-for="profile in profiles" :key="profile.link" v-on:click="redirectTo(profile.link, profile.label)">
+        <span
+          v-for="profile in profiles"
+          :key="profile.link"
+          v-on:click="redirectTo(profile.link, profile.label)"
+        >
           <v-btn :key="profile.icon" class="mx-3 white--text" icon>
             <v-icon size="24px">{{ profile.icon }}</v-icon>
           </v-btn>
@@ -20,9 +24,15 @@
         by
         <strong>
           <span
-            v-on:click="redirectTo('https://github.com/nishantwrp/nishantwrp-website', 'Source Code')"
+            v-on:click="
+              redirectTo(
+                'https://github.com/nishantwrp/nishantwrp-website',
+                'Source Code'
+              )
+            "
             style="color: white; cursor: pointer;"
-          >nishantwrp</span>
+            >nishantwrp</span
+          >
         </strong>
       </v-card-text>
     </v-card>
@@ -31,7 +41,13 @@
 
 <script>
 import { socialLinkClick } from "../js/analytics";
-import { FACEBOOK_URL, LINKEDIN_URL, TWITTER_URL, GITHUB_URL, EMAIL } from "../constants";
+import {
+  FACEBOOK_URL,
+  LINKEDIN_URL,
+  TWITTER_URL,
+  GITHUB_URL,
+  EMAIL
+} from "../constants";
 
 export default {
   data: () => ({
@@ -66,7 +82,7 @@ export default {
   methods: {
     redirectTo(link, label) {
       socialLinkClick(this, label);
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     }
   }
 };

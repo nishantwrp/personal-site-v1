@@ -4,7 +4,11 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
+            <v-breadcrumbs
+              class="justify-center"
+              :items="items"
+              divider=">"
+            ></v-breadcrumbs>
             <h1 :class="$style.text">{{ tagContent.title }}</h1>
             <p :class="$style.text">{{ tagContent.description }}</p>
           </v-flex>
@@ -13,15 +17,22 @@
       <v-divider></v-divider>
       <v-container fluid grid-list-md>
         <v-layout row wrap>
-          <v-flex v-for="post in postsContent" :key="post.node.title" xs12 sm12 md6 lg6 xl6>
+          <v-flex
+            v-for="post in postsContent"
+            :key="post.node.title"
+            xs12
+            sm12
+            md6
+            lg6
+            xl6
+          >
             <PostCard :post="post.node" />
           </v-flex>
         </v-layout>
       </v-container>
-      <v-container
-        :class="$style.noPosts"
-        v-if="!postsContent.length"
-      >No posts in this category yet.</v-container>
+      <v-container :class="$style.noPosts" v-if="!postsContent.length"
+        >No posts in this category yet.</v-container
+      >
     </v-container>
   </Layout>
 </template>

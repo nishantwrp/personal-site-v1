@@ -1,7 +1,7 @@
 <template>
-    <span :class="[$style.logotext,$style.noselect]">
-      <div :class="$style.loadingdiv">NM</div>
-    </span>
+  <span :class="[$style.logotext, $style.noselect]">
+    <div :class="$style.loadingdiv">NM</div>
+  </span>
 </template>
 
 <style module lang="css">
