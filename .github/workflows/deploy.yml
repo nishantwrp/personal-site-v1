@@ -1,0 +1,19 @@
+name: Deploy
+on:
+  release:
+    types:
+      - created
+jobs:
+  merge:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+    steps:
+      - name: Merge develop with master
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          from_branch: develop
+          target_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
