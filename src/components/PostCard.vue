@@ -12,7 +12,11 @@
           <h3 class="headline mb-0">{{ post.title }}</h3>
           <div>{{ post.shortDescription }}</div>
           <div>
-            <router-link v-for="tag in post.tags" :key="tag.title" :to="tagUrl(tag.title)">
+            <router-link
+              v-for="tag in post.tags"
+              :key="tag.title"
+              :to="tagUrl(tag.title)"
+            >
               <v-chip outline color="primary">
                 <span style="cursor: pointer;">{{ tag.title }}</span>
               </v-chip>
@@ -42,7 +46,7 @@ export default {
       return "/posts/" + slug(title) + "/";
     }
   }
-}
+};
 </script>
 
 <style module lang="css">
