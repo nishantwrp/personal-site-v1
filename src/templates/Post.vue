@@ -4,7 +4,11 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
+            <v-breadcrumbs
+              class="justify-center"
+              :items="items"
+              divider=">"
+            ></v-breadcrumbs>
             <h1 :class="$style.text">{{ postContent.title }}</h1>
             <p :class="$style.text">{{ postContent.shortDescription }}</p>
           </v-flex>
@@ -24,7 +28,10 @@
         </v-layout>
         <v-layout row wrap>
           <v-flex xl9 lg9 md12 sm12 xs12>
-            <vue-markdown :class="[$style.montserrat, $style.postContent]" :source="postContent.content" />
+            <vue-markdown
+              :class="[$style.montserrat, $style.postContent]"
+              :source="postContent.content"
+            />
           </v-flex>
           <v-flex xl3 lg3 md12 sm12 xs12>
             <SideBlock :displayTitle="false" v-if="postContent.links.length">
@@ -36,7 +43,11 @@
               />
             </SideBlock>
             <SideBlock title="Tags">
-              <router-link v-for="tag in postContent.tags" :key="tag.title" :to="tagUrl(tag.title)">
+              <router-link
+                v-for="tag in postContent.tags"
+                :key="tag.title"
+                :to="tagUrl(tag.title)"
+              >
                 <v-chip outline color="primary">
                   <span style="cursor: pointer;">{{ tag.title }}</span>
                 </v-chip>
@@ -134,8 +145,8 @@ export default {
         },
         {
           property: "og:url",
-          content: this.$page.metadata.siteUrl + this.postUrl(
-            this.postContent.title)
+          content:
+            this.$page.metadata.siteUrl + this.postUrl(this.postContent.title)
         },
         {
           name: "twitter:card",
@@ -199,7 +210,7 @@ export default {
             rel: "canonical",
             href: this.postContent.canonicalUrl
           }
-        ]
+        ];
       }
 
       return [];
@@ -209,7 +220,7 @@ export default {
     this.createBreadcrumb();
     // This statement triggers the syntax highlighter because it doesn't
     // get triggered automatically sometimes.
-    Prism.highlightAll();
+    window.Prism.highlightAll();
   },
   methods: {
     tagUrl(title) {

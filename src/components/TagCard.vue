@@ -32,7 +32,7 @@ export default {
       return "/categories/" + slug(title) + "/";
     }
   }
-}
+};
 </script>
 
 <style module lang="css">

@@ -4,7 +4,11 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
+            <v-breadcrumbs
+              class="justify-center"
+              :items="items"
+              divider=">"
+            ></v-breadcrumbs>
             <h1 :class="$style.text">Page Not Found</h1>
           </v-flex>
         </v-layout>
@@ -12,7 +16,9 @@
       <v-divider></v-divider>
 
       <v-container style="text-align:center">
-        <h2 :class="$style.text">Oops! Seems that the page you were looking for is not present.</h2>
+        <h2 :class="$style.text">
+          Oops! Seems that the page you were looking for is not present.
+        </h2>
       </v-container>
     </v-container>
   </Layout>

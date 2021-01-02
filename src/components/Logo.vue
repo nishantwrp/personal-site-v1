@@ -1,15 +1,17 @@
 <template>
   <div>
     <span
-      :class="[$style.logotext,$style.noselect]"
+      :class="[$style.logotext, $style.noselect]"
       :style="logostyle"
       v-show="$vuetify.breakpoint.smAndUp"
-    >Nishant Mittal</span>
+      >Nishant Mittal</span
+    >
     <span
-      :class="[$style.logotext,$style.noselect]"
+      :class="[$style.logotext, $style.noselect]"
       :style="logostyle"
       v-show="$vuetify.breakpoint.xs"
-    >NM</span>
+      >NM</span
+    >
   </div>
 </template>
 

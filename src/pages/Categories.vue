@@ -4,7 +4,11 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
+            <v-breadcrumbs
+              class="justify-center"
+              :items="items"
+              divider=">"
+            ></v-breadcrumbs>
             <h1 :class="$style.text">Categories</h1>
           </v-flex>
         </v-layout>
@@ -12,7 +16,15 @@
       <v-divider></v-divider>
       <v-container fluid grid-list-md>
         <v-layout row wrap>
-          <v-flex v-for="tag in tagsContent" :key="tag.node.title" xs12 sm12 md4 lg3 xl2>
+          <v-flex
+            v-for="tag in tagsContent"
+            :key="tag.node.title"
+            xs12
+            sm12
+            md4
+            lg3
+            xl2
+          >
             <TagCard :tag="tag.node" />
           </v-flex>
         </v-layout>
@@ -41,7 +53,7 @@ query {
 </page-query>
 
 <script>
-import TagCard from '../components/TagCard';
+import TagCard from "../components/TagCard";
 
 export default {
   metaInfo: {

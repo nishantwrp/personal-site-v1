@@ -31,7 +31,7 @@ export default {
   methods: {
     redirectTo(link, label) {
       postLinkClick(this, this.title, label);
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     }
   }
 };
