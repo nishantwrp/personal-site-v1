@@ -1,10 +1,10 @@
 <template>
   <v-card :class="$style.cardStyle" style="margin:20px;">
     <v-card-title primary-title>
-        <div v-if="displayTitle" :class="$style.title">{{ title }}</div>
-        <div :class="$style.content">
-          <slot></slot>
-        </div>
+      <div v-if="displayTitle" :class="$style.title">{{ title }}</div>
+      <div :class="$style.content">
+        <slot></slot>
+      </div>
     </v-card-title>
   </v-card>
 </template>

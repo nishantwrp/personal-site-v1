@@ -4,7 +4,11 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs class="justify-center" :items="items" divider=">"></v-breadcrumbs>
+            <v-breadcrumbs
+              class="justify-center"
+              :items="items"
+              divider=">"
+            ></v-breadcrumbs>
             <h1 :class="$style.text">Hi, Welcome To My Website</h1>
           </v-flex>
         </v-layout>
@@ -23,10 +27,20 @@
         </v-layout>
       </v-container>
       <v-container>
-        <h2 style="text-align: center !important;" :class="$style.text">Latest Blog Posts</h2>
+        <h2 style="text-align: center !important;" :class="$style.text">
+          Latest Blog Posts
+        </h2>
         <v-container fluid grid-list-md>
           <v-layout row wrap>
-            <v-flex v-for="post in blogPosts" :key="post.title" xs12 sm12 md12 lg4 xl4>
+            <v-flex
+              v-for="post in blogPosts"
+              :key="post.title"
+              xs12
+              sm12
+              md12
+              lg4
+              xl4
+            >
               <PostCard :post="post" />
             </v-flex>
           </v-layout>
@@ -73,7 +87,7 @@ query {
 </page-query>
 
 <script>
-import PostCard from '../components/PostCard';
+import PostCard from "../components/PostCard";
 
 export default {
   metaInfo: {
@@ -110,8 +124,7 @@ export default {
 
       for (const { node } of allPosts) {
         const tags = node.tags.map(tag => tag.title);
-        console.log(tags);
-        if (tags.includes('Blog')) {
+        if (tags.includes("Blog")) {
           blogPosts.push(node);
 
           // A maximum of three posts.

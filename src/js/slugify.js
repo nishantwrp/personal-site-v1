@@ -1,5 +1,5 @@
-var slugify = require('slugify')
+var slugify = require("slugify");
 
 export function slug(title) {
-  return slugify(title, {lower: true});
+  return slugify(title, { lower: true });
 }
