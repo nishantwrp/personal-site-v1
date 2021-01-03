@@ -10,6 +10,9 @@
               divider=">"
             ></v-breadcrumbs>
             <h1 :class="$style.text">Categories</h1>
+            <p :class="$style.text">
+              Various topics based on my blog posts and projects.
+            </p>
           </v-flex>
         </v-layout>
       </v-container>
@@ -61,7 +64,7 @@ export default {
     meta: [
       {
         name: "description",
-        content: "Various topics based on my blog posts and projects."
+        content: "Various topics based on nishantwrp's blog posts and projects."
       }
     ]
   },

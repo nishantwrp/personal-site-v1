@@ -22,9 +22,9 @@
             :key="post.node.title"
             xs12
             sm12
-            md6
-            lg6
-            xl6
+            md4
+            lg4
+            xl4
           >
             <PostCard :post="post.node" />
           </v-flex>

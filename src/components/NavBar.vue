@@ -121,7 +121,7 @@ export default {
         },
         {
           title: "Projects",
-          link: "/categories/project/",
+          link: "/projects/",
           highlight: false,
           internal: true
         },
