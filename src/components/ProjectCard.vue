@@ -1,5 +1,5 @@
 <template>
-  <a :href="project.link" target="_blank">
+  <a :href="project.link" v-on:click="logInteraction()" target="_blank">
     <v-card :class="$style.projectCard">
       <v-img
         :alt="project.coverImage.title"
@@ -44,6 +44,7 @@
 
 <script>
 import { slug } from "../js/slugify";
+import { projectCardClick } from "../js/analytics";
 
 export default {
   props: {
@@ -58,6 +59,9 @@ export default {
     },
     postUrl(title) {
       return "/posts/" + slug(title) + "/";
+    },
+    logInteraction() {
+      projectCardClick(this, this.project.title);
     }
   }
 };

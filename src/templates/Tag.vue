@@ -97,6 +97,7 @@ query ($id: ID!) {
 </page-query>
 
 <script>
+import { slug } from "../js/slugify";
 import CardSection from "../components/CardSection";
 
 export default {
@@ -146,6 +147,9 @@ export default {
     }
   },
   methods: {
+    tagUrl(title) {
+      return "/categories/" + slug(title) + "/";
+    },
     createBreadcrumb() {
       this.items.push({
         text: this.tagContent.title,
