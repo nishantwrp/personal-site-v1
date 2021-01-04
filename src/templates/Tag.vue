@@ -17,21 +17,28 @@
       <v-divider></v-divider>
       <v-container fluid grid-list-md>
         <v-layout row wrap>
-          <v-flex
-            v-for="post in postsContent"
-            :key="post.node.title"
-            xs12
-            sm12
-            md6
-            lg6
-            xl6
-          >
-            <PostCard :post="post.node" />
+          <v-flex xl12 v-if="posts.length">
+            <CardSection
+              title="Posts"
+              description=""
+              :objects="posts"
+              type="post"
+            />
+          </v-flex>
+          <v-flex xl12 v-if="projects.length">
+            <CardSection
+              title="Projects"
+              description=""
+              :objects="projects"
+              type="project"
+            />
           </v-flex>
         </v-layout>
       </v-container>
-      <v-container :class="$style.noPosts" v-if="!postsContent.length"
-        >No posts in this category yet.</v-container
+      <v-container
+        :class="$style.noPosts"
+        v-if="!(posts.length || projects.length)"
+        >Nothing in this category yet.</v-container
       >
     </v-container>
   </Layout>
@@ -61,12 +68,37 @@ query ($id: ID!) {
       }
     }
   }
+
+  allProjects: allContentfulProject(filter: {tags: {contains: [$id]}}) {
+    edges {
+      node {
+        title
+        link
+        coverImage {
+          title
+          file {
+            url
+          }
+        }
+        shortDescription
+        relatedPosts {
+          title
+        }
+        tags {
+          title
+        }
+        type {
+          title
+        }
+      }
+    }
+  }
 }
 </page-query>
 
 <script>
 import { slug } from "../js/slugify";
-import PostCard from "../components/PostCard";
+import CardSection from "../components/CardSection";
 
 export default {
   metaInfo() {
@@ -98,8 +130,11 @@ export default {
     tagContent() {
       return this.$page.tag;
     },
-    postsContent() {
-      return this.$page.allPosts.edges;
+    posts() {
+      return this.$page.allPosts.edges.map(item => item.node);
+    },
+    projects() {
+      return this.$page.allProjects.edges.map(item => item.node);
     }
   },
   mounted() {
@@ -124,7 +159,7 @@ export default {
     }
   },
   components: {
-    PostCard
+    CardSection
   }
 };
 </script>

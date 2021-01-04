@@ -14,15 +14,19 @@
       <v-spacer></v-spacer>
 
       <div v-show="$vuetify.breakpoint.mdAndUp">
-        <router-link v-for="page in pages" :key="page.title" :to="page.link">
-          <v-btn outline color="primary">{{ page.title }}</v-btn>
-        </router-link>
-        <span
-          v-for="externalLink in externalLinks"
-          :key="externalLink.title"
-          v-on:click="redirectTo(externalLink.link, externalLink.title)"
-        >
-          <v-btn color="primary">{{ externalLink.title }}</v-btn>
+        <span v-for="page in pages" :key="page.title">
+          <router-link v-if="page.internal" :to="page.link">
+            <v-btn v-if="page.highlight" color="primary">{{
+              page.title
+            }}</v-btn>
+            <v-btn v-else outline color="primary">{{ page.title }}</v-btn>
+          </router-link>
+          <span v-else v-on:click="redirectTo(page.link, page.title)">
+            <v-btn v-if="page.highlight" color="primary">{{
+              page.title
+            }}</v-btn>
+            <v-btn v-else outline color="primary">{{ page.title }}</v-btn>
+          </span>
         </span>
       </div>
 
@@ -43,15 +47,19 @@
       <v-spacer></v-spacer>
 
       <div v-show="$vuetify.breakpoint.mdAndUp">
-        <router-link v-for="page in pages" :key="page.title" :to="page.link">
-          <v-btn outline color="primary">{{ page.title }}</v-btn>
-        </router-link>
-        <span
-          v-for="externalLink in externalLinks"
-          :key="externalLink.title"
-          v-on:click="redirectTo(externalLink.link, externalLink.title)"
-        >
-          <v-btn color="primary">{{ externalLink.title }}</v-btn>
+        <span v-for="page in pages" :key="page.title">
+          <router-link v-if="page.internal" :to="page.link">
+            <v-btn v-if="page.highlight" color="primary">{{
+              page.title
+            }}</v-btn>
+            <v-btn v-else outline color="primary">{{ page.title }}</v-btn>
+          </router-link>
+          <span v-else v-on:click="redirectTo(page.link, page.title)">
+            <v-btn v-if="page.highlight" color="primary">{{
+              page.title
+            }}</v-btn>
+            <v-btn v-else outline color="primary">{{ page.title }}</v-btn>
+          </span>
         </span>
       </div>
 
@@ -65,22 +73,18 @@
     <v-navigation-drawer v-model="drawer" temporary fixed>
       <v-list class="pt-0" dense>
         <v-list-tile v-for="page in pages" :key="page.title">
-          <router-link :to="page.link">
+          <router-link v-if="page.internal" :to="page.link">
             <v-list-tile-content>
               <v-list-tile-title>{{ page.title }}</v-list-tile-title>
             </v-list-tile-content>
           </router-link>
-        </v-list-tile>
-
-        <v-list-tile>
           <span
-            v-for="externalLink in externalLinks"
-            v-on:click="redirectTo(externalLink.link, externalLink.title)"
-            :key="externalLink.title"
+            v-else
+            v-on:click="redirectTo(page.link, page.title)"
             style="color: #3f51b5; cursor: pointer;"
           >
             <v-list-tile-content>
-              <v-list-tile-title>{{ externalLink.title }}</v-list-tile-title>
+              <v-list-tile-title>{{ page.title }}</v-list-tile-title>
             </v-list-tile-content>
           </span>
         </v-list-tile>
@@ -111,21 +115,27 @@ export default {
       pages: [
         {
           title: "Categories",
-          link: "/categories/"
+          link: "/categories/",
+          highlight: false,
+          internal: true
         },
         {
           title: "Projects",
-          link: "/categories/project/"
+          link: "/projects/",
+          highlight: false,
+          internal: true
         },
         {
           title: "Blog",
-          link: "/categories/blog/"
-        }
-      ],
-      externalLinks: [
+          link: "/posts/",
+          highlight: false,
+          internal: true
+        },
         {
           title: "Resume",
-          link: RESUME_URL
+          link: RESUME_URL,
+          highlight: true,
+          internal: false
         }
       ]
     };

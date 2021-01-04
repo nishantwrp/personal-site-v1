@@ -13,3 +13,11 @@ export function postLinkClick(vue, postTitle, linkLabel) {
     eventLabel: postTitle + " - " + linkLabel
   });
 }
+
+export function projectCardClick(vue, projectTitle) {
+  vue.$ga.event({
+    eventCategory: "Project Card",
+    eventAction: "Click",
+    eventLabel: projectTitle
+  });
+}

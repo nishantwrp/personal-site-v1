@@ -28,7 +28,7 @@
       </v-container>
       <v-container>
         <h2 style="text-align: center !important;" :class="$style.text">
-          Latest Blog Posts
+          Latest Posts
         </h2>
         <v-container fluid grid-list-md>
           <v-layout row wrap>
@@ -46,7 +46,7 @@
           </v-layout>
         </v-container>
         <v-container style="text-align: center !important">
-          <router-link to="/categories/blog/">
+          <router-link to="/posts/">
             <v-btn outline color="primary">Show All</v-btn>
           </router-link>
         </v-container>
@@ -119,22 +119,8 @@ export default {
       return this.$page.allContentfulIntro.edges[0].node;
     },
     blogPosts() {
-      const allPosts = this.$page.posts.edges;
-      let blogPosts = [];
-
-      for (const { node } of allPosts) {
-        const tags = node.tags.map(tag => tag.title);
-        if (tags.includes("Blog")) {
-          blogPosts.push(node);
-
-          // A maximum of three posts.
-          if (blogPosts.length === 3) {
-            break;
-          }
-        }
-      }
-
-      return blogPosts;
+      const allPosts = this.$page.posts.edges.map(item => item.node);
+      return allPosts.slice(0, 3);
     }
   },
   components: {
