@@ -9,10 +9,8 @@
               :items="items"
               divider=">"
             ></v-breadcrumbs>
-            <h1 :class="$style.text">Categories</h1>
-            <p :class="$style.text">
-              Various topics based on my blog posts and projects.
-            </p>
+            <h1 :class="$style.text">Posts</h1>
+            <p :class="$style.text">Blog posts by me.</p>
           </v-flex>
         </v-layout>
       </v-container>
@@ -20,15 +18,15 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex
-            v-for="tag in tagsContent"
-            :key="tag.node.title"
+            v-for="post in postsContent"
+            :key="post.node.title"
             xs12
             sm12
             md4
-            lg3
-            xl2
+            lg4
+            xl4
           >
-            <TagCard :tag="tag.node" />
+            <PostCard :post="post.node" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -38,11 +36,14 @@
 
 <page-query>
 query {
-  allContentfulTag {
+  allContentfulPost {
     edges {
       node {
         title
-        description
+        tags {
+          title
+        }
+        shortDescription
         coverImage {
           title
           file {
@@ -56,15 +57,16 @@ query {
 </page-query>
 
 <script>
-import TagCard from "../components/TagCard";
+import { slug } from "../js/slugify";
+import PostCard from "../components/PostCard";
 
 export default {
   metaInfo: {
-    title: "Categories",
+    title: "Posts",
     meta: [
       {
         name: "description",
-        content: "Various topics based on nishantwrp's blog posts and projects."
+        content: "Blog posts by nishantwrp."
       }
     ]
   },
@@ -76,19 +78,24 @@ export default {
         href: "/"
       },
       {
-        text: "Categories",
+        text: "Posts",
         disabled: false,
-        href: "/categories/"
+        href: "/posts/"
       }
     ]
   }),
+  methods: {
+    tagUrl(title) {
+      return "/categories/" + slug(title) + "/";
+    }
+  },
   computed: {
-    tagsContent() {
-      return this.$page.allContentfulTag.edges;
+    postsContent() {
+      return this.$page.allContentfulPost.edges;
     }
   },
   components: {
-    TagCard
+    PostCard
   }
 };
 </script>

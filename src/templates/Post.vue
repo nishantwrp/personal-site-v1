@@ -189,7 +189,8 @@ export default {
       },
       {
         text: "Posts",
-        disabled: true
+        disabled: false,
+        href: "/posts/"
       }
     ]
   }),
