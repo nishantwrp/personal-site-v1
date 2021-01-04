@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { slug } from "../../js/slugify";
+import { slug } from "../js/slugify";
 
 export default {
   props: {

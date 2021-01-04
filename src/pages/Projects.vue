@@ -22,10 +22,11 @@
             :key="projectType.title"
             xl12
           >
-            <ProjectsSection
+            <CardSection
+              type="project"
               :title="projectType.title"
               :description="projectType.description"
-              :projects="projectType.projects"
+              :objects="projectType.projects"
             />
           </v-flex>
         </v-layout>
@@ -74,7 +75,7 @@ query {
 
 <script>
 import { PROJECT_TYPES } from "../constants";
-import ProjectsSection from "../components/projects/ProjectsSection";
+import CardSection from "../components/CardSection";
 
 export default {
   metaInfo: {
@@ -132,7 +133,7 @@ export default {
     }
   },
   components: {
-    ProjectsSection
+    CardSection
   }
 };
 </script>
