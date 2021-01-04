@@ -35,7 +35,9 @@
           </v-flex>
         </v-layout>
       </v-container>
-      <v-container :class="$style.noPosts" v-if="!((posts.length) || (projects.length))"
+      <v-container
+        :class="$style.noPosts"
+        v-if="!(posts.length || projects.length)"
         >Nothing in this category yet.</v-container
       >
     </v-container>
