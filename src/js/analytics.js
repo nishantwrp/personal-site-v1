@@ -14,6 +14,14 @@ export function postLinkClick(vue, postTitle, linkLabel) {
   });
 }
 
+export function sharePost(vue, postTitle) {
+  vue.$ga.event({
+    eventCategory: "Post",
+    eventAction: "Share",
+    eventLabel: postTitle
+  });
+}
+
 export function projectCardClick(vue, projectTitle) {
   vue.$ga.event({
     eventCategory: "Project Card",
