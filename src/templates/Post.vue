@@ -56,6 +56,11 @@
             <SideBlock title="Written On">
               <span :class="$style.montserrat">{{ postContent.date }}</span>
             </SideBlock>
+            <SideBlock title="Share">
+              <v-btn round color="primary" v-on:click="shareToTwitter()">
+                <v-icon>fab fa-twitter</v-icon>
+              </v-btn>
+            </SideBlock>
           </v-flex>
         </v-layout>
       </v-container>
@@ -103,6 +108,7 @@ query ($id: ID!) {
 
 <script>
 import { slug } from "../js/slugify";
+import { sharePost } from "../js/analytics";
 import SideBlock from "../components/SideBlock";
 import SideLink from "../components/SideLink";
 
@@ -236,6 +242,18 @@ export default {
         disabled: false,
         href: this.postUrl(this.postContent.title)
       });
+    },
+    shareToTwitter() {
+      sharePost(this, this.postContent.title);
+
+      const url = new URL("https://www.twitter.com/share");
+      url.searchParams.append("text", this.postContent.title);
+      url.searchParams.append(
+        "url",
+        this.$page.metadata.siteUrl + this.postUrl(this.postContent.title)
+      );
+      url.searchParams.append("via", "nishantwrp");
+      window.open(url.toString(), "twitter-share", "width=550,height=550");
     }
   }
 };
