@@ -14,10 +14,10 @@ export function postLinkClick(vue, postTitle, linkLabel) {
   });
 }
 
-export function sharePost(vue, postTitle) {
+export function sharePost(vue, medium, postTitle) {
   vue.$ga.event({
     eventCategory: "Post",
-    eventAction: "Share",
+    eventAction: `Share on ${medium}`,
     eventLabel: postTitle
   });
 }

@@ -60,6 +60,12 @@
               <v-btn round color="primary" v-on:click="shareToTwitter()">
                 <v-icon>fab fa-twitter</v-icon>
               </v-btn>
+              <v-btn round color="primary" v-on:click="shareToLinkedin()">
+                <v-icon>fab fa-linkedin-in</v-icon>
+              </v-btn>
+              <v-btn round color="primary" v-on:click="shareToReddit()">
+                <v-icon>fab fa-reddit-alien</v-icon>
+              </v-btn>
             </SideBlock>
           </v-flex>
         </v-layout>
@@ -244,7 +250,7 @@ export default {
       });
     },
     shareToTwitter() {
-      sharePost(this, this.postContent.title);
+      sharePost(this, "Twitter", this.postContent.title);
 
       const url = new URL("https://www.twitter.com/share");
       url.searchParams.append("text", this.postContent.title);
@@ -254,6 +260,28 @@ export default {
       );
       url.searchParams.append("via", "nishantwrp");
       window.open(url.toString(), "twitter-share", "width=550,height=550");
+    },
+    shareToLinkedin() {
+      sharePost(this, "LinkedIn", this.postContent.title);
+
+      const url = new URL("https://www.linkedin.com/shareArticle");
+      url.searchParams.append("mini", true);
+      url.searchParams.append(
+        "url",
+        this.$page.metadata.siteUrl + this.postUrl(this.postContent.title)
+      );
+      window.open(url.toString(), "linkedin-share", "width=550,height=550");
+    },
+    shareToReddit() {
+      sharePost(this, "Reddit", this.postContent.title);
+
+      const url = new URL("https://www.reddit.com/submit");
+      url.searchParams.append("title", this.postContent.title);
+      url.searchParams.append(
+        "url",
+        this.$page.metadata.siteUrl + this.postUrl(this.postContent.title)
+      );
+      window.open(url.toString(), "reddit-share", "width=550,height=550");
     }
   }
 };
