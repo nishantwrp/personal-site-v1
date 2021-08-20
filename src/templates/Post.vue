@@ -4,11 +4,6 @@
       <v-container>
         <v-layout text-xs-center wrap>
           <v-flex xl12>
-            <v-breadcrumbs
-              class="justify-center"
-              :items="items"
-              divider=">"
-            ></v-breadcrumbs>
             <h1 :class="$style.text">{{ postContent.title }}</h1>
             <p :class="$style.text">{{ postContent.shortDescription }}</p>
           </v-flex>
@@ -192,20 +187,6 @@ export default {
     SideBlock,
     SideLink
   },
-  data: () => ({
-    items: [
-      {
-        text: "Home",
-        disabled: false,
-        href: "/"
-      },
-      {
-        text: "Posts",
-        disabled: false,
-        href: "/posts/"
-      }
-    ]
-  }),
   computed: {
     postContent() {
       return this.$page.post;
@@ -230,7 +211,6 @@ export default {
     }
   },
   mounted() {
-    this.createBreadcrumb();
     // This statement triggers the syntax highlighter because it doesn't
     // get triggered automatically sometimes.
     window.Prism.highlightAll();
@@ -241,13 +221,6 @@ export default {
     },
     postUrl(title) {
       return "/posts/" + slug(title) + "/";
-    },
-    createBreadcrumb() {
-      this.items.push({
-        text: this.postContent.title,
-        disabled: false,
-        href: this.postUrl(this.postContent.title)
-      });
     },
     shareToTwitter() {
       sharePost(this, "Twitter", this.postContent.title);
