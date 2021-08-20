@@ -114,12 +114,6 @@ export default {
       drawer: null,
       pages: [
         {
-          title: "Categories",
-          link: "/categories/",
-          highlight: false,
-          internal: true
-        },
-        {
           title: "Projects",
           link: "/projects/",
           highlight: false,
