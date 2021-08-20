@@ -4925,12 +4925,12 @@ graphql@^14.4.2:
   dependencies:
     iterall "^1.2.2"
 
-gridsome-plugin-gitalk@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/gridsome-plugin-gitalk/-/gridsome-plugin-gitalk-0.1.0.tgz#c79fd3a9c4a7f89b5e2b83af8c5312235dd574aa"
-  integrity sha512-g6u13UMbl9tCdkTdRYr6Tbx60NlJLL5I6O2g1sy+8mO8/nJkAHRldRUr3H1bNKL1wbPFVbeOe1ybzsBw9whJyA==
+gridsome-plugin-gitalk@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/gridsome-plugin-gitalk/-/gridsome-plugin-gitalk-0.4.0.tgz#3644477695fd2a881d56a50d5c44ba9536ce1800"
+  integrity sha512-6fZDCFTPsy3uoha+hW70KiXmwRrc03N7t1v3kZdoaMXjjqBo+VvCv19UVepVIH7VpXgvZwaKald1h6sw7jZinQ==
   dependencies:
-    vue-gitalk "^0.2.0"
+    vue-gitalk "^0.5.0"
 
 gridsome-plugin-monetization@^1.0.1:
   version "1.0.1"
@@ -9962,10 +9962,10 @@ vue-eslint-parser@^7.3.0:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-gitalk@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vue-gitalk/-/vue-gitalk-0.2.0.tgz#46682a889841e1fbfffb105680f7ad41e55cc905"
-  integrity sha512-kuTvcvQwBi7rdPjFzfDqgxpN8aHwMxu+fsvEG1oVaTLXKYuF6InUbezdL+YSOV/oUGN4DX1ga21+JYrCoMKrsA==
+vue-gitalk@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/vue-gitalk/-/vue-gitalk-0.5.0.tgz#2cf41edba24be4122a8f33ef89a5ec8abb028584"
+  integrity sha512-r+oFEMc8oPluFS8AnyxRA2bCsoD0HECHffM10/2SSw0f8ihxp+A5E3OzPzn/mbbVhkjiySV/0niB+KHZCqJ0iQ==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
