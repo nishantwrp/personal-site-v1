@@ -41,22 +41,11 @@
 
 <script>
 import { socialLinkClick } from "../js/analytics";
-import {
-  FACEBOOK_URL,
-  LINKEDIN_URL,
-  TWITTER_URL,
-  GITHUB_URL,
-  EMAIL
-} from "../constants";
+import { LINKEDIN_URL, TWITTER_URL, GITHUB_URL } from "../constants";
 
 export default {
   data: () => ({
     profiles: [
-      {
-        label: "Facebook",
-        icon: "fab fa-facebook",
-        link: FACEBOOK_URL
-      },
       {
         label: "Linkedin",
         icon: "fab fa-linkedin",
@@ -71,11 +60,6 @@ export default {
         label: "Github",
         icon: "fab fa-github",
         link: GITHUB_URL
-      },
-      {
-        label: "Mail",
-        icon: "fas fa-envelope",
-        link: "mailto:" + EMAIL
       }
     ]
   }),
