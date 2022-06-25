@@ -1,5 +1,7 @@
 # nishantwrp-website
-This is the source code for my website which is live at [nishantwrp.com](https://www.nishantwrp.com/)
+> **Note**: I've migrated to a new minimalistic personal site & blog that is deployed at [nishantwrp.com](https://www.nishantwrp.com/).
+
+This is the source code for my website which is live at [site-v1.nishantwrp.com](https://site-v1.nishantwrp.com/).
 
 ## Technologies Used
 - [Gridsome](https://gridsome.org/) - I have used gridsome to generate a static site for the site to be SEO Friendly.

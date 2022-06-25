@@ -8,7 +8,7 @@ function slug(title) {
 
 module.exports = {
   siteName: "Nishant Mittal",
-  siteUrl: "https://www.nishantwrp.com",
+  siteUrl: "https://site-v1.nishantwrp.com",
   plugins: [
     {
       use: "@gridsome/plugin-google-analytics",
