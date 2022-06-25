@@ -50,7 +50,15 @@ module.exports = {
       use: "@gridsome/plugin-sitemap"
     },
     {
-      use: "gridsome-plugin-robots"
+      use: "gridsome-plugin-robots",
+      options: {
+        policy: [
+          {
+            userAgent: "*",
+            disallow: "/"
+          }
+        ]
+      }
     },
     {
       use: "gridsome-plugin-monetization",
